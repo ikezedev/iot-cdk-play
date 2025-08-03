@@ -1,79 +1,132 @@
-import { Duration, Stack, StackProps } from 'aws-cdk-lib';
-import * as sns from 'aws-cdk-lib/aws-sns';
-import * as subs from 'aws-cdk-lib/aws-sns-subscriptions';
-import * as sqs from 'aws-cdk-lib/aws-sqs';
-import { Construct } from 'constructs';
-import * as iam from 'aws-cdk-lib/aws-iam';
-import * as iot from 'aws-cdk-lib/aws-iot';
+import { RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
+import { Construct } from "constructs";
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as iot from "aws-cdk-lib/aws-iot";
+import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
+import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as lambdaNodejs from "aws-cdk-lib/aws-lambda-nodejs";
+import path from "node:path";
+import { Environment } from "../utils/Environment";
 
 export class CdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const queue = new sqs.Queue(this, 'CdkQueue', {
-      visibilityTimeout: Duration.seconds(300)
+    const temperatureTable = new dynamodb.Table(this, "TemperatureTable", {
+      partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
+      sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const topic = new sns.Topic(this, 'CdkTopic');
+    const humidityTable = new dynamodb.Table(this, "HumidityTable", {
+      partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
+      sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
 
-    topic.addSubscription(new subs.SqsSubscription(queue));
+    const weatherDataProcessor = new lambdaNodejs.NodejsFunction(
+      this,
+      "WeatherDataProcessorFunction",
+      {
+        runtime: lambda.Runtime.NODEJS_22_X,
+        entry: path.join(__dirname, "../lambda/handler.ts"),
+        handler: "handler",
+        environment: {
+          TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
+          HUMIDITY_TABLE_NAME: humidityTable.tableName,
+        },
+        bundling: {
+          minify: true,
+          sourceMap: true,
+        },
+      }
+    );
   }
 }
 
-interface TemperatureSensorProps {
+interface WeatherSensorProps {
   thingName: string;
 }
 
-class TemperatureSensor extends Construct {
+class WeatherSensor extends Construct {
   public readonly thing: iot.CfnThing;
-  constructor(scope: Construct, id: string, props: TemperatureSensorProps) {
+  constructor(
+    scope: Construct,
+    id: string,
+    props: WeatherSensorProps,
+    env: Environment,
+    tempFn: lambdaNodejs.NodejsFunction,
+    humidityFn: lambdaNodejs.NodejsFunction
+  ) {
     super(scope, id);
 
     // Create a Thing
-    this.thing = new iot.CfnThing(this, 'MyThing', {
+    this.thing = new iot.CfnThing(this, "MyThing", {
       thingName: props.thingName,
     });
 
-    // Create an IoT Policy
     const policy = new iam.PolicyDocument({
       statements: [
         new iam.PolicyStatement({
-          actions: ['iot:Connect', 'iot:Publish', 'iot:Subscribe', 'iot:Receive'],
-          resources: ['*'], // Specify your resources more narrowly for better security
+          actions: ["iot:Connect"],
+          resources: [`${env.baseArn}:client/rust-client`],
+        }),
+        new iam.PolicyStatement({
+          actions: ["iot:Publish", "iot:PublishRetain"],
+          resources: [
+            `${env.baseArn}:topic/monitoring/temperature`,
+            `${env.baseArn}:topic/monitoring/humidity`,
+          ],
         }),
       ],
     });
 
-    const cfnPolicy = new iot.CfnPolicy(this, 'IoTPolicy', {
-      policyName: 'IoTSensorPolicy',
+    new iot.CfnPolicy(this, "IoTPolicy", {
+      policyName: "IoTSensorPolicy",
       policyDocument: policy,
     });
 
-    // Create a Role for IoT to assume
-    const role = new iam.Role(this, 'IoTRole', {
-      assumedBy: new iam.ServicePrincipal('iot.amazonaws.com'),
+    const role = new iam.Role(this, "IoTRole", {
+      assumedBy: new iam.ServicePrincipal("iot.amazonaws.com"),
     });
 
-    role.attachInlinePolicy(new iam.Policy(this, 'IoTPolicyAttachment', {
-      document: policy,
-    }));
+    role.attachInlinePolicy(
+      new iam.Policy(this, "IoTPolicyAttachment", {
+        document: policy,
+      })
+    );
 
     // Create a Thing Principal Attachment
-    new iot.CfnThingPrincipalAttachment(this, 'ThingPrincipalAttachment', {
+    new iot.CfnThingPrincipalAttachment(this, "ThingPrincipalAttachment", {
       principal: role.roleArn,
       thingName: props.thingName,
     });
 
-    // Create an IoT Rule
-    new iot.CfnTopicRule(this, 'IoTRule', {
-      ruleName: 'IoTSensorRule',
+    new iot.CfnTopicRule(this, "IoTRule", {
+      ruleName: "IoTTemperatureRule",
       topicRulePayload: {
-        sql: `SELECT temperature FROM 'topic/sensor' WHERE temperature > 50`,
+        sql: `SELECT * FROM 'monitoring/temperature'`,
         actions: [
           {
-            sns: {
-              // topicArn: 'arn:aws:sns:REGION:ACCOUNT_ID:TOPIC_NAME', // Replace with your SNS topic ARN
-              roleArn: role.roleArn,
+            lambda: {
+              functionArn: tempFn.functionArn,
+            },
+          },
+        ],
+        ruleDisabled: false,
+      },
+    });
+
+    new iot.CfnTopicRule(this, "IoTRule", {
+      ruleName: "IoTHumidityRule",
+      topicRulePayload: {
+        sql: `SELECT * FROM 'monitoring/humidity'`,
+        actions: [
+          {
+            lambda: {
+              functionArn: humidityFn.functionArn, // Replace with your Lambda function ARN
             },
           },
         ],
