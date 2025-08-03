@@ -26,13 +26,30 @@ export class CdkStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const weatherDataProcessor = new lambdaNodejs.NodejsFunction(
+    const temp_handler = new lambdaNodejs.NodejsFunction(
       this,
-      "WeatherDataProcessorFunction",
+      "temp_handlerFunction",
       {
         runtime: lambda.Runtime.NODEJS_22_X,
         entry: path.join(__dirname, "../lambda/handler.ts"),
-        handler: "handler",
+        handler: "temperatureHandler",
+        environment: {
+          TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
+          HUMIDITY_TABLE_NAME: humidityTable.tableName,
+        },
+        bundling: {
+          minify: true,
+          sourceMap: true,
+        },
+      }
+    );
+    const humidity_handler = new lambdaNodejs.NodejsFunction(
+      this,
+      "humidity_handlerFunction",
+      {
+        runtime: lambda.Runtime.NODEJS_22_X,
+        entry: path.join(__dirname, "../lambda/handler.ts"),
+        handler: "humidityHandler",
         environment: {
           TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
           HUMIDITY_TABLE_NAME: humidityTable.tableName,
@@ -63,7 +80,7 @@ class WeatherSensor extends Construct {
     super(scope, id);
 
     // Create a Thing
-    this.thing = new iot.CfnThing(this, "MyThing", {
+    this.thing = new iot.CfnThing(this, id, {
       thingName: props.thingName,
     });
 
@@ -71,7 +88,7 @@ class WeatherSensor extends Construct {
       statements: [
         new iam.PolicyStatement({
           actions: ["iot:Connect"],
-          resources: [`${env.baseArn}:client/rust-client`],
+          resources: [`${env.baseArn}:client/rust-client-*`],
         }),
         new iam.PolicyStatement({
           actions: ["iot:Publish", "iot:PublishRetain"],
