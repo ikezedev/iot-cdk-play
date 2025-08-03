@@ -45,6 +45,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
+name = "aws-iot-device-sdk-rust"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "82b534c4b42ffd55c9644bc311025cb3b8e04b59b69154c687df012ec9631e0b"
+dependencies = [
+ "rumqttc",
+ "tokio",
+]
+
+[[package]]
 name = "backtrace"
 version = "0.3.75"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -121,6 +131,12 @@ name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
+
+[[package]]
+name = "dotenvy"
+version = "0.15.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
 
 [[package]]
 name = "either"
@@ -305,10 +321,13 @@ dependencies = [
 name = "monitoring-core"
 version = "0.1.0"
 dependencies = [
+ "aws-iot-device-sdk-rust",
  "chrono",
+ "dotenvy",
  "prost",
  "rand",
  "rumqttc",
+ "tokio",
 ]
 
 [[package]]
