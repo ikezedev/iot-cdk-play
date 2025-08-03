@@ -5,10 +5,19 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
-    # volumes:
-      # - mosquitto_data:/mosquitto/data
-      # - mosquitto_log:/mosquitto/log
-      # - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
-# volumes:
-#   mosquitto_data:
-#   mosquitto_log:
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+  dynamodb-local:
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./docker/dynamodb:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+volumes:
+  mosquitto_data:
+  mosquitto_log:
