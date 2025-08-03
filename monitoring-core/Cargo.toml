@@ -1,6 +1,5 @@
 [package]
 name = "monitoring-core"
 version = "0.1.0"
+authors = ["Ikechukwu Eze <92305839+ikezedev@users.noreply.github.com>"]
 edition = "2024"
-
-[dependencies]
