@@ -3,3 +3,9 @@ resolver = "3"
 members = [
   "monitoring-core",
 ]
+
+[workspace.dependencies]
+chrono = "0.4.41"
+prost = "0.14"
+rand = "0.9.2"
+rumqttc = "0.24.0"
