@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message Temperature {
+  string device_id = 1;
+  float32 value = 2;
+  uint64 timestamp = 3;
+}
+
+message Humidity {
+  string device_id = 1;
+  float32 value = 2;
+  uint64 timestamp = 3;
+}
