@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/cdk.ts",
+  "app": "npx ts-node --prefer-ts-exts cdk/bin/cdk.ts",
   "watch": {
     "include": [
       "**"
@@ -10,7 +10,12 @@
       "**/*.d.ts",
       "**/*.js",
       "tsconfig.json",
-      "package*.json",
+      "Cargo.lock",
+      "Cargo.toml",
+      "docker-compose.yml",
+      ".node-version",
+      "target",
+      "monitoring-core",
       "yarn.lock",
       "node_modules",
       "test"
