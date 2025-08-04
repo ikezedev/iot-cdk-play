@@ -11,60 +11,80 @@ import { Environment } from "../utils/Environment";
 export class CdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+    const env = Environment.getEnvironment();
 
-    const temperatureTable = new dynamodb.Table(this, "TemperatureTable", {
-      partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
-      sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
-      removalPolicy: RemovalPolicy.DESTROY,
-    });
-
-    const humidityTable = new dynamodb.Table(this, "HumidityTable", {
-      partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
-      sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
-      removalPolicy: RemovalPolicy.DESTROY,
-    });
-
-    const temp_handler = new lambdaNodejs.NodejsFunction(
+    const temparatureTableAndHandler = new TableAndLambda(
       this,
-      "temp_handlerFunction",
+      "TemparatureTableAndHandler",
       {
-        runtime: lambda.Runtime.NODEJS_22_X,
-        entry: path.join(__dirname, "../lambda/handler.ts"),
-        handler: "temperatureHandler",
-        environment: {
-          TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
-          HUMIDITY_TABLE_NAME: humidityTable.tableName,
-        },
-        bundling: {
-          minify: true,
-          sourceMap: true,
-        },
+        tableName: "TemperatureTable",
+        handlerName: "TemperatureHandlerFunction",
+        handlerPath: "../lambda/handler.ts",
+        handlerFunction: "temperatureHandler",
+        tableEnvName: "TEMPERATURE_TABLE_NAME",
       }
     );
-    const humidity_handler = new lambdaNodejs.NodejsFunction(
+    const humidityTableAndHandler = new TableAndLambda(
       this,
-      "humidity_handlerFunction",
+      "HumidityTableAndHandler",
       {
-        runtime: lambda.Runtime.NODEJS_22_X,
-        entry: path.join(__dirname, "../lambda/handler.ts"),
-        handler: "humidityHandler",
-        environment: {
-          TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
-          HUMIDITY_TABLE_NAME: humidityTable.tableName,
-        },
-        bundling: {
-          minify: true,
-          sourceMap: true,
-        },
+        tableName: "HumidityTable",
+        handlerName: "HumidityHandlerFunction",
+        handlerPath: "../lambda/handler.ts",
+        handlerFunction: "humidityHandler",
+        tableEnvName: "HUMIDITY_TABLE_NAME",
       }
+    );
+
+    new WeatherSensor(
+      this,
+      "WeatherSensor",
+      env,
+      temparatureTableAndHandler.handler,
+      humidityTableAndHandler.handler
     );
   }
 }
 
-interface WeatherSensorProps {
-  thingName: string;
+export class TableAndLambda extends Construct {
+  public readonly table: dynamodb.Table;
+  public readonly handler: lambdaNodejs.NodejsFunction;
+
+  constructor(
+    scope: Construct,
+    id: string,
+    props: {
+      tableName: string;
+      handlerName: string;
+      handlerPath: string;
+      handlerFunction: string;
+      tableEnvName: string;
+    }
+  ) {
+    super(scope, id);
+
+    this.table = new dynamodb.Table(this, props.tableName, {
+      partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
+      sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
+
+    this.handler = new lambdaNodejs.NodejsFunction(this, props.handlerName, {
+      runtime: lambda.Runtime.NODEJS_22_X,
+      entry: path.join(__dirname, props.handlerPath),
+      handler: props.handlerFunction,
+      environment: {
+        [props.tableEnvName]: this.table.tableName,
+      },
+      bundling: {
+        minify: false,
+        sourceMap: true,
+      },
+    });
+
+    this.table.grantReadWriteData(this.handler);
+  }
 }
 
 class WeatherSensor extends Construct {
@@ -72,59 +92,64 @@ class WeatherSensor extends Construct {
   constructor(
     scope: Construct,
     id: string,
-    props: WeatherSensorProps,
     env: Environment,
     tempFn: lambdaNodejs.NodejsFunction,
     humidityFn: lambdaNodejs.NodejsFunction
   ) {
     super(scope, id);
 
-    // Create a Thing
     this.thing = new iot.CfnThing(this, id, {
-      thingName: props.thingName,
+      thingName: id,
     });
 
-    const policy = new iam.PolicyDocument({
-      statements: [
-        new iam.PolicyStatement({
-          actions: ["iot:Connect"],
-          resources: [`${env.baseArn}:client/rust-client-*`],
-        }),
-        new iam.PolicyStatement({
-          actions: ["iot:Publish", "iot:PublishRetain"],
-          resources: [
-            `${env.baseArn}:topic/monitoring/temperature`,
-            `${env.baseArn}:topic/monitoring/humidity`,
-          ],
-        }),
-      ],
-    });
-
-    new iot.CfnPolicy(this, "IoTPolicy", {
+    const policy = new iot.CfnPolicy(this, "IoTPolicy", {
       policyName: "IoTSensorPolicy",
-      policyDocument: policy,
+      policyDocument: new iam.PolicyDocument({
+        statements: [
+          new iam.PolicyStatement({
+            actions: ["iot:Connect"],
+            resources: [
+              `${env.getNamespace("iot")}:client/rust-client-1`,
+              `${env.getNamespace("iot")}:client/rust-client-2`,
+            ],
+          }),
+          new iam.PolicyStatement({
+            actions: ["iot:Publish", "iot:PublishRetain", "iot:Receive"],
+            resources: [
+              `${env.getNamespace("iot")}:topic/${env.topicName}/temperature`,
+              `${env.getNamespace("iot")}:topic/${env.topicName}/humidity`,
+            ],
+          }),
+          new iam.PolicyStatement({
+            actions: ["iot:Subscribe"],
+            resources: [
+              `${env.getNamespace("iot")}:topicfilter/${
+                env.topicName
+              }/temperature`,
+              `${env.getNamespace("iot")}:topicfilter/${
+                env.topicName
+              }/humidity`,
+            ],
+          }),
+        ],
+      }),
     });
 
-    const role = new iam.Role(this, "IoTRole", {
-      assumedBy: new iam.ServicePrincipal("iot.amazonaws.com"),
+    new iot.CfnPolicyPrincipalAttachment(this, "PolicyPrincipalAttachment", {
+      policyName: policy.policyName!,
+      principal: env.certArn,
     });
 
-    role.attachInlinePolicy(
-      new iam.Policy(this, "IoTPolicyAttachment", {
-        document: policy,
-      })
-    );
-
-    // Create a Thing Principal Attachment
-    new iot.CfnThingPrincipalAttachment(this, "ThingPrincipalAttachment", {
-      principal: role.roleArn,
-      thingName: props.thingName,
+    new iot.CfnThingPrincipalAttachment(this, "PrincipalAttachment", {
+      thingName: id,
+      principal: env.certArn,
     });
 
-    new iot.CfnTopicRule(this, "IoTRule", {
+    let tempRule = new iot.CfnTopicRule(this, "IoTTemperatureRule", {
       ruleName: "IoTTemperatureRule",
       topicRulePayload: {
-        sql: `SELECT * FROM 'monitoring/temperature'`,
+        awsIotSqlVersion: "2016-03-23",
+        sql: `SELECT encode(*, 'base64') as data FROM '${env.topicName}/temperature'`,
         actions: [
           {
             lambda: {
@@ -132,23 +157,36 @@ class WeatherSensor extends Construct {
             },
           },
         ],
-        ruleDisabled: false,
       },
     });
 
-    new iot.CfnTopicRule(this, "IoTRule", {
+    let humidityRule = new iot.CfnTopicRule(this, "IoTHumidityRule", {
       ruleName: "IoTHumidityRule",
       topicRulePayload: {
-        sql: `SELECT * FROM 'monitoring/humidity'`,
+        awsIotSqlVersion: "2016-03-23",
+        sql: `SELECT encode(*, 'base64') as data FROM '${env.topicName}/humidity'`,
         actions: [
           {
             lambda: {
-              functionArn: humidityFn.functionArn, // Replace with your Lambda function ARN
+              functionArn: humidityFn.functionArn,
             },
           },
         ],
-        ruleDisabled: false,
       },
+    });
+
+    new lambda.CfnPermission(this, "TemperatureLambdaPermission", {
+      action: "lambda:InvokeFunction",
+      functionName: tempFn.functionArn,
+      principal: "iot.amazonaws.com",
+      sourceArn: tempRule.attrArn,
+    });
+
+    new lambda.CfnPermission(this, "HumidityLambdaPermission", {
+      action: "lambda:InvokeFunction",
+      functionName: humidityFn.functionArn,
+      principal: "iot.amazonaws.com",
+      sourceArn: humidityRule.attrArn,
     });
   }
 }
