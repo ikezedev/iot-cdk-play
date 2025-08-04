@@ -6,7 +6,7 @@ use aws_iot_device_sdk_rust::{
 use chrono::Utc;
 use prost::Message;
 use rand::Rng;
-use rumqttc::{ClientError, Packet, QoS};
+use rumqttc::{ClientError, ConnectionError, Packet, QoS};
 use std::time::Duration;
 
 use crate::types::Temperature;
@@ -14,6 +14,7 @@ use crate::types::Temperature;
 pub async fn run() -> Result<(), Box<dyn std::error::Error>> {
     let (temp_client, temp_eventloop_stuff) =
         AWSIoTAsyncClient::new(aws_settings("rust-client-1")?).await?;
+    println!("Connected to AWS IoT Core");
     // let (humidity_client, humidity_eventloop_stuff) = AWSIoTAsyncClient::new(aws_settings("rust-client-2")?).await?;
 
     // tokio::spawn(async move {
@@ -54,10 +55,8 @@ pub async fn run() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let listen_thread = tokio::spawn(async move {
-        async_event_loop_listener(temp_eventloop_stuff)
-            .await
-            .unwrap();
-        //iot_core_client.listen().await.unwrap();
+        async_event_loop_listener(temp_eventloop_stuff).await?;
+        Ok::<(), ConnectionError>(())
     });
 
     let publisher = tokio::spawn(async move {
@@ -80,7 +79,6 @@ pub async fn run() -> Result<(), Box<dyn std::error::Error>> {
         Ok::<(), ClientError>(())
     });
 
-    //iot_core_client.publish("topic".to_string(), QoS::AtMostOnce, "hey").await.unwrap();
     match tokio::join!(publisher, recv1_thread, listen_thread) {
         (Ok(_), Ok(_), Ok(_)) => (),
         _ => panic!("Error in threads"),
@@ -93,9 +91,9 @@ fn random_number_generator() -> impl Iterator<Item = u16> {
 }
 
 fn aws_settings(client_id: &str) -> Result<AWSIoTSettings, Box<dyn std::error::Error>> {
-    let ca_path = "../certs/root-CA.crt";
-    let client_cert_path = "../certs/Test.cert.pem";
-    let client_key_path = "../certs/Test.private.key";
+    let ca_path = "certs/root-CA.crt";
+    let client_cert_path = "certs/Test.cert.pem";
+    let client_key_path = "certs/Test.private.key";
     let aws_iot_endpoint = std::env::var("MQTT_BROKER_URL")?;
 
     Ok(AWSIoTSettings::new(
