@@ -1,29 +1,71 @@
 mod types;
 
+use aws_iot_device_sdk_rust::{
+    AWSIoTSettings, async_client::AWSIoTAsyncClient, async_event_loop_listener,
+};
 use chrono::Utc;
 use prost::Message;
 use rand::Rng;
-use rumqttc::{Client, MqttOptions, QoS};
-use std::thread::{self};
+use rumqttc::{ClientError, ConnectionError, Packet, QoS};
 use std::time::Duration;
 
-use crate::types::{Humidity, Temperature};
+use crate::types::Temperature;
 
-pub fn run() {
-    let mut mqttoptions = MqttOptions::new("test-2", "127.0.0.1", 1883);
-    mqttoptions.set_keep_alive(Duration::ZERO);
+pub async fn run() -> Result<(), Box<dyn std::error::Error>> {
+    let (temp_client, temp_eventloop_stuff) =
+        AWSIoTAsyncClient::new(aws_settings("rust-client-1")?).await?;
+    println!("Connected to AWS IoT Core");
+    // let (humidity_client, humidity_eventloop_stuff) = AWSIoTAsyncClient::new(aws_settings("rust-client-2")?).await?;
 
-    let (client, mut connection) = Client::new(mqttoptions, 10);
-    let temp_client = client.clone();
-    let temperature_device_id = "temperature_sensor_1".to_string();
+    // tokio::spawn(async move {
+    //     let humidity_device_id = "humidity_sensor_1".to_string();
+    //     for humidity in random_number_generator().take(10) {
+    //         client
+    //             .publish(
+    //                 "monitoring/humidity",
+    //                 QoS::AtLeastOnce,
+    //                 Humidity {
+    //                     device_id: humidity_device_id.clone(),
+    //                     value: humidity as f32,
+    //                     timestamp: Utc::now().timestamp_millis() as u64,
+    //                 }
+    //                 .encode_to_vec(),
+    //             )
+    //             .await
+    //             .inspect_err(|e| eprintln!("Failed to publish humidity: {}", e))
+    //             .unwrap();
+    //         tokio::time::sleep(Duration::from_secs(1)).await;
+    //     }
+    // });
 
-    thread::spawn(move || {
+    let mut receiver1 = temp_client.get_receiver().await;
+
+    let recv1_thread = tokio::spawn(async move {
+        loop {
+            if let Ok(event) = receiver1.recv().await {
+                println!("Received event on receiver1: {:?}", event);
+                match event {
+                    Packet::Publish(p) => {
+                        println!("Received message {:?} on topic: {}", p.payload, p.topic)
+                    }
+                    _ => println!("Got event on receiver1: {:?}", event),
+                }
+            }
+        }
+    });
+
+    let listen_thread = tokio::spawn(async move {
+        async_event_loop_listener(temp_eventloop_stuff).await?;
+        Ok::<(), ConnectionError>(())
+    });
+
+    let publisher = tokio::spawn(async move {
+        let temperature_device_id = "temperature_sensor_1".to_string();
         for temp in random_number_generator().take(10) {
             temp_client
                 .publish(
                     "monitoring/temperature",
                     QoS::AtLeastOnce,
-                    false,
                     Temperature {
                         device_id: temperature_device_id.clone(),
                         value: temp as f32,
@@ -31,58 +73,35 @@ pub fn run() {
                     }
                     .encode_to_vec(),
                 )
-                .inspect_err(|e| eprintln!("Failed to publish temperature: {}", e))
-                .unwrap();
-            thread::sleep(Duration::from_secs(1));
+                .await?;
+            tokio::time::sleep(Duration::from_secs(1)).await;
         }
+        Ok::<(), ClientError>(())
     });
 
-    let humidity_device_id = "humidity_sensor_1".to_string();
-
-    thread::spawn(move || {
-        for humidity in random_number_generator().take(10) {
-            client
-                .publish(
-                    "monitoring/humidity",
-                    QoS::AtLeastOnce,
-                    false,
-                    Humidity {
-                        device_id: humidity_device_id.clone(),
-                        value: humidity as f32,
-                        timestamp: Utc::now().timestamp_millis() as u64,
-                    }
-                    .encode_to_vec(),
-                )
-                .inspect_err(|e| eprintln!("Failed to publish humidity: {}", e))
-                .unwrap();
-            thread::sleep(Duration::from_secs(1));
-        }
-    });
-
-    for event in connection.iter() {
-        match event {
-            Ok(rumqttc::Event::Incoming(rumqttc::Packet::Publish(p))) => {
-                println!("Received publish on topic: {}", p.topic);
-                if p.topic == "monitoring/temperature" {
-                    let temp: Temperature = Temperature::decode(p.payload.as_ref()).unwrap();
-                    println!(
-                        "Received temperature from {}: {} at {}",
-                        temp.device_id, temp.value, temp.timestamp
-                    );
-                } else if p.topic == "monitoring/humidity" {
-                    let humidity: Humidity = Humidity::decode(p.payload.as_ref()).unwrap();
-                    println!(
-                        "Received humidity from {}: {} at {}",
-                        humidity.device_id, humidity.value, humidity.timestamp
-                    );
-                }
-            }
-            Err(e) => eprintln!("Error in connection: {}", e),
-            _ => {}
-        }
+    match tokio::join!(publisher, recv1_thread, listen_thread) {
+        (Ok(_), Ok(_), Ok(_)) => (),
+        _ => panic!("Error in threads"),
     }
+    Ok(())
 }
 
 fn random_number_generator() -> impl Iterator<Item = u16> {
     (0..).map(|_| rand::rng().random_range(1..=100))
+}
+
+fn aws_settings(client_id: &str) -> Result<AWSIoTSettings, Box<dyn std::error::Error>> {
+    let ca_path = "certs/root-CA.crt";
+    let client_cert_path = "certs/Test.cert.pem";
+    let client_key_path = "certs/Test.private.key";
+    let aws_iot_endpoint = std::env::var("MQTT_BROKER_URL")?;
+
+    Ok(AWSIoTSettings::new(
+        client_id.to_string(),
+        ca_path.to_string(),
+        client_cert_path.to_string(),
+        client_key_path.to_string(),
+        aws_iot_endpoint,
+        None,
+    ))
 }

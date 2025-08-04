@@ -5,7 +5,10 @@ authors = ["Ikechukwu Eze <92305839+ikezedev@users.noreply.github.com>"]
 edition = "2024"
 
 [dependencies]
+aws-iot-device-sdk-rust.workspace = true
 chrono.workspace = true
+dotenvy.workspace = true
 prost.workspace = true
 rand.workspace = true
 rumqttc.workspace = true
+tokio.workspace = true
