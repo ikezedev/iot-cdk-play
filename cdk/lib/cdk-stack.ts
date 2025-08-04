@@ -5,7 +5,7 @@ import * as iot from "aws-cdk-lib/aws-iot";
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as lambdaNodejs from "aws-cdk-lib/aws-lambda-nodejs";
-import path from "node:path";
+import * as path from "node:path";
 import { Environment } from "../utils/Environment";
 
 export class CdkStack extends Stack {
@@ -64,6 +64,7 @@ export class TableAndLambda extends Construct {
     super(scope, id);
 
     this.table = new dynamodb.Table(this, props.tableName, {
+      tableName: props.tableName,
       partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
       sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
@@ -71,6 +72,7 @@ export class TableAndLambda extends Construct {
     });
 
     this.handler = new lambdaNodejs.NodejsFunction(this, props.handlerName, {
+      functionName: props.handlerName,
       runtime: lambda.Runtime.NODEJS_22_X,
       entry: path.join(__dirname, props.handlerPath),
       handler: props.handlerFunction,
