@@ -1,19 +1,16 @@
 import { Humidity, Temperature } from "../protos/types";
 
-export const humidityHandler = async (input: string) => {
+export const humidityHandler = (input: { data: string }) => {
   console.log("Event received:", input);
 
-  // Process the event data
-  const { deviceId, timestamp, value } = parse(input, Humidity.fromBinary);
-
-  // Log the data for debugging
+  const { deviceId, timestamp, value } = parse(
+    input.data,
+    Humidity.fromBinary.bind(Humidity)
+  );
   console.log(
     `Device ID: ${deviceId}, Timestamp: ${timestamp}, Humidity: ${value}`
   );
 
-  // Here you would typically insert the data into DynamoDB tables
-  // For example:
-  // await temperatureTable.put({ device_id, temperature, timestamp: Date.now() });
   // await humidityTable.put({ device_id, humidity, timestamp: Date.now() });
 
   return {
@@ -23,21 +20,19 @@ export const humidityHandler = async (input: string) => {
   };
 };
 
-export const temperatureHandler = async (input: string) => {
+export const temperatureHandler = (input: { data: string }) => {
   console.log("Event received:", input);
 
-  // Process the event data
-  const { deviceId, timestamp, value } = parse(input, Temperature.fromBinary);
+  const { deviceId, timestamp, value } = parse(
+    input.data,
+    Temperature.fromBinary.bind(Temperature)
+  );
 
-  // Log the data for debugging
   console.log(
     `Device ID: ${deviceId}, Timestamp: ${timestamp}, Temperature: ${value}`
   );
 
-  // Here you would typically insert the data into DynamoDB tables
-  // For example:
   // await temperatureTable.put({ device_id, temperature, timestamp: Date.now() });
-  // await humidityTable.put({ device_id, humidity, timestamp: Date.now() });
 
   return {
     timestamp: new Date(Number(timestamp)),
@@ -47,5 +42,11 @@ export const temperatureHandler = async (input: string) => {
 };
 
 function parse<T>(input: string, fn: (data: Uint8Array) => T): T {
-  return fn(Buffer.from(input, "hex"));
+  try {
+    const buffer = Buffer.from(input, "base64");
+    return fn(buffer);
+  } catch (error) {
+    console.error("Error parsing input:", error);
+    throw error;
+  }
 }
