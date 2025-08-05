@@ -13,79 +13,66 @@ export class CdkStack extends Stack {
     super(scope, id, props);
     const env = Environment.getEnvironment();
 
-    const temparatureTableAndHandler = new TableAndLambda(
+    const temperatureTable = new WeatherTable(this, "TemperatureTable");
+    const temperatureHandler = new WeatherHandler(
       this,
-      "TemparatureTableAndHandler",
+      "TemperatureHandlerFunction",
+      "../lambda/handler.ts",
+      "temperatureHandler",
       {
-        tableName: "TemperatureTable",
-        handlerName: "TemperatureHandlerFunction",
-        handlerPath: "../lambda/handler.ts",
-        handlerFunction: "temperatureHandler",
-        tableEnvName: "TEMPERATURE_TABLE_NAME",
+        TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
       }
     );
-    const humidityTableAndHandler = new TableAndLambda(
+    temperatureTable.grantReadWriteData(temperatureHandler);
+
+    const humidityTable = new WeatherTable(this, "HumidityTable");
+    const humidityHandler = new WeatherHandler(
       this,
-      "HumidityTableAndHandler",
+      "HumidityHandlerFunction",
+      "../lambda/handler.ts",
+      "humidityHandler",
       {
-        tableName: "HumidityTable",
-        handlerName: "HumidityHandlerFunction",
-        handlerPath: "../lambda/handler.ts",
-        handlerFunction: "humidityHandler",
-        tableEnvName: "HUMIDITY_TABLE_NAME",
+        HUMIDITY_TABLE_NAME: humidityTable.tableName,
       }
     );
+    humidityTable.grantReadWriteData(humidityHandler);
 
     new WeatherSensor(
       this,
       "WeatherSensor",
       env,
-      temparatureTableAndHandler.handler,
-      humidityTableAndHandler.handler
+      temperatureHandler,
+      humidityHandler
     );
   }
 }
 
-export class TableAndLambda extends Construct {
-  public readonly table: dynamodb.Table;
-  public readonly handler: lambdaNodejs.NodejsFunction;
-
-  constructor(
-    scope: Construct,
-    id: string,
-    props: {
-      tableName: string;
-      handlerName: string;
-      handlerPath: string;
-      handlerFunction: string;
-      tableEnvName: string;
-    }
-  ) {
-    super(scope, id);
-
-    this.table = new dynamodb.Table(this, props.tableName, {
-      tableName: props.tableName,
+class WeatherTable extends dynamodb.Table {
+  constructor(scope: Construct, tableName: string) {
+    super(scope, tableName, {
+      tableName: tableName,
       partitionKey: { name: "device_id", type: dynamodb.AttributeType.STRING },
       sortKey: { name: "timestamp", type: dynamodb.AttributeType.NUMBER },
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       removalPolicy: RemovalPolicy.DESTROY,
     });
-
-    this.handler = new lambdaNodejs.NodejsFunction(this, props.handlerName, {
-      functionName: props.handlerName,
+  }
+}
+class WeatherHandler extends lambdaNodejs.NodejsFunction {
+  constructor(
+    scope: Construct,
+    id: string,
+    handlerPath: string,
+    handlerFunction: string,
+    environment: { [key: string]: string } = {}
+  ) {
+    super(scope, id, {
+      entry: path.join(__dirname, handlerPath),
+      handler: handlerFunction,
       runtime: lambda.Runtime.NODEJS_22_X,
-      entry: path.join(__dirname, props.handlerPath),
-      handler: props.handlerFunction,
-      environment: {
-        [props.tableEnvName]: this.table.tableName,
-      },
-      bundling: {
-        minify: false,
-        sourceMap: true,
-      },
+      environment: environment,
+      functionName: id,
     });
-
-    this.table.grantReadWriteData(this.handler);
   }
 }
 
@@ -159,6 +146,7 @@ class WeatherSensor extends Construct {
             },
           },
         ],
+        ruleDisabled: false,
       },
     });
 
@@ -174,6 +162,7 @@ class WeatherSensor extends Construct {
             },
           },
         ],
+        ruleDisabled: false,
       },
     });
 

@@ -2,12 +2,15 @@ import * as cdk from "aws-cdk-lib";
 import { Template, Match } from "aws-cdk-lib/assertions";
 import * as Cdk from "../lib/cdk-stack";
 
-test("dynamodb tables created", () => {
+let template: Template;
+
+beforeAll(() => {
   const app = new cdk.App();
   const stack = new Cdk.CdkStack(app, "MyTestStack");
+  template = Template.fromStack(stack);
+});
 
-  const template = Template.fromStack(stack);
-
+test("dynamodb tables created", () => {
   template.resourceCountIs("AWS::DynamoDB::Table", 2);
 
   template.hasResourceProperties("AWS::DynamoDB::Table", {
@@ -32,11 +35,6 @@ test("dynamodb tables created", () => {
 });
 
 test("lambda functions created", () => {
-  const app = new cdk.App();
-  const stack = new Cdk.CdkStack(app, "MyTestStack");
-
-  const template = Template.fromStack(stack);
-
   template.resourceCountIs("AWS::Lambda::Function", 2);
 
   template.hasResourceProperties("AWS::Lambda::Function", {
@@ -46,7 +44,7 @@ test("lambda functions created", () => {
     Environment: {
       Variables: {
         TEMPERATURE_TABLE_NAME: {
-          Ref: "TemparatureTableAndHandlerTemperatureTableD365FA1E",
+          Ref: "TemperatureTable6C2EF813",
         },
       },
     },
@@ -59,9 +57,73 @@ test("lambda functions created", () => {
     Environment: {
       Variables: {
         HUMIDITY_TABLE_NAME: {
-          Ref: "HumidityTableAndHandlerHumidityTable660BC191",
+          Ref: "HumidityTable10436007",
         },
       },
     },
+  });
+});
+
+describe("Weather Sensor IoT", () => {
+  test("Topic Rules created", () => {
+    template.resourceCountIs("AWS::IoT::TopicRule", 2);
+
+    template.hasResourceProperties("AWS::IoT::TopicRule", {
+      TopicRulePayload: {
+        RuleDisabled: false,
+        Sql: "SELECT encode(*, 'base64') as data FROM 'monitoring/temperature'",
+        AwsIotSqlVersion: "2016-03-23",
+        Actions: Match.arrayWith([
+          Match.objectLike({
+            Lambda: Match.objectLike({
+              FunctionArn: {
+                "Fn::GetAtt": ["TemperatureHandlerFunction689D8EDF", "Arn"],
+              },
+            }),
+          }),
+        ]),
+      },
+    });
+    template.hasResourceProperties("AWS::IoT::TopicRule", {
+      TopicRulePayload: {
+        RuleDisabled: false,
+        Sql: "SELECT encode(*, 'base64') as data FROM 'monitoring/humidity'",
+        AwsIotSqlVersion: "2016-03-23",
+        Actions: Match.arrayWith([
+          Match.objectLike({
+            Lambda: Match.objectLike({
+              FunctionArn: {
+                "Fn::GetAtt": ["HumidityHandlerFunctionF7B098D6", "Arn"],
+              },
+            }),
+          }),
+        ]),
+      },
+    });
+  });
+
+  test("Lambda permissions for IoT", () => {
+    template.resourceCountIs("AWS::Lambda::Permission", 2);
+    template.hasResourceProperties("AWS::Lambda::Permission", {
+      Action: "lambda:InvokeFunction",
+      FunctionName: {
+        "Fn::GetAtt": ["TemperatureHandlerFunction689D8EDF", "Arn"],
+      },
+      Principal: "iot.amazonaws.com",
+      SourceArn: {
+        "Fn::GetAtt": ["WeatherSensorIoTTemperatureRuleBB404478", "Arn"],
+      },
+    });
+
+    template.hasResourceProperties("AWS::Lambda::Permission", {
+      Action: "lambda:InvokeFunction",
+      FunctionName: {
+        "Fn::GetAtt": ["HumidityHandlerFunctionF7B098D6", "Arn"],
+      },
+      Principal: "iot.amazonaws.com",
+      SourceArn: {
+        "Fn::GetAtt": ["WeatherSensorIoTHumidityRuleC2281067", "Arn"],
+      },
+    });
   });
 });
