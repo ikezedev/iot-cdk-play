@@ -1,0 +1,358 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;max-width:100%;max-height:590px;"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="731px"
+    viewBox="-0.5 -0.5 731 590"
+    content="&lt;mxfile host=&quot;app.diagrams.net&quot; agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36&quot; version=&quot;28.0.7&quot;&gt;&#10;  &lt;diagram name=&quot;Page-1&quot; id=&quot;MnyIF1HDdKxnJgcugOA5&quot;&gt;&#10;    &lt;mxGraphModel dx=&quot;1322&quot; dy=&quot;1013&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;827&quot; pageHeight=&quot;1169&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;&#10;      &lt;root&gt;&#10;        &lt;mxCell id=&quot;0&quot; /&gt;&#10;        &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-42&quot; value=&quot;&quot; style=&quot;group&quot; parent=&quot;1&quot; vertex=&quot;1&quot; connectable=&quot;0&quot;&gt;&#10;          &lt;mxGeometry x=&quot;48&quot; y=&quot;290&quot; width=&quot;730&quot; height=&quot;590&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-1&quot; value=&quot;AWS Cloud&quot; style=&quot;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry y=&quot;137.2093023255814&quot; width=&quot;578.4905660377358&quot; height=&quot;384.18604651162786&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-2&quot; value=&quot;Region&quot; style=&quot;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;27.54716981132076&quot; y=&quot;178.3720930232558&quot; width=&quot;550.9433962264152&quot; height=&quot;343.0232558139534&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-5&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-3&quot; target=&quot;QpVrh31kPz-CHikbTkFE-4&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-20&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-3&quot; target=&quot;QpVrh31kPz-CHikbTkFE-19&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-3&quot; value=&quot;&quot; style=&quot;sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.internet_of_things;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;206.6037735849057&quot; y=&quot;10.97674418604651&quot; width=&quot;50.493522987060736&quot; height=&quot;50.493522987060736&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-7&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-4&quot; target=&quot;QpVrh31kPz-CHikbTkFE-6&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-4&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rule;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;34.613018867924524&quot; y=&quot;137.2093023255814&quot; width=&quot;31.19778384557681&quot; height=&quot;52.89797646263504&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-9&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-6&quot; target=&quot;QpVrh31kPz-CHikbTkFE-8&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-6&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;33.208113207547164&quot; y=&quot;269.9593023255814&quot; width=&quot;33.662348658040486&quot; height=&quot;33.662348658040486&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-8&quot; value=&quot;&quot; style=&quot;sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;237.5943396226416&quot; y=&quot;260.6976744186046&quot; width=&quot;49.89240961816714&quot; height=&quot;49.89240961816714&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-22&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-18&quot; target=&quot;QpVrh31kPz-CHikbTkFE-8&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-18&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;86.59452830188681&quot; y=&quot;246.9767441860465&quot; width=&quot;33.662348658040486&quot; height=&quot;33.662348658040486&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-21&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-19&quot; target=&quot;QpVrh31kPz-CHikbTkFE-18&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-19&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rule;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;89.41811320754718&quot; y=&quot;137.2093023255814&quot; width=&quot;31.19778384557681&quot; height=&quot;52.89797646263504&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-30&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-23&quot; target=&quot;QpVrh31kPz-CHikbTkFE-24&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-23&quot; value=&quot;&quot; style=&quot;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.apigateway;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;463.6188679245284&quot; y=&quot;137.2093023255814&quot; width=&quot;48.08906951148642&quot; height=&quot;46.417974345962264&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-25&quot; value=&quot;&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-24&quot; target=&quot;QpVrh31kPz-CHikbTkFE-8&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-26&quot; value=&quot;&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; source=&quot;QpVrh31kPz-CHikbTkFE-24&quot; target=&quot;QpVrh31kPz-CHikbTkFE-23&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-24&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;468.30188679245293&quot; y=&quot;266.3918604651163&quot; width=&quot;39.913927694533726&quot; height=&quot;39.913927694533726&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-35&quot; value=&quot;&quot; style=&quot;sketch=0;html=1;aspect=fixed;shadow=0;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.loading_2;strokeColor=#00CC00;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-2&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;275.4716981132076&quot; y=&quot;301.86046511627904&quot; width=&quot;24.874071204816353&quot; height=&quot;26.737522648386445&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-33&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; source=&quot;QpVrh31kPz-CHikbTkFE-27&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#10;            &lt;mxPoint x=&quot;695.7426221577165&quot; y=&quot;521.3249850924269&quot; as=&quot;targetPoint&quot; /&gt;&#10;          &lt;/mxGeometry&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-27&quot; value=&quot;&quot; style=&quot;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.device_group&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;661.1320754716982&quot; y=&quot;521.3953488372092&quot; width=&quot;68.8679245283019&quot; height=&quot;68.6046511627907&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-34&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.4;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; source=&quot;QpVrh31kPz-CHikbTkFE-23&quot; target=&quot;QpVrh31kPz-CHikbTkFE-27&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-39&quot; value=&quot;&quot; style=&quot;group&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; vertex=&quot;1&quot; connectable=&quot;0&quot;&gt;&#10;          &lt;mxGeometry x=&quot;371.8867924528303&quot; width=&quot;96.41509433962266&quot; height=&quot;96.04651162790697&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-37&quot; value=&quot;&quot; style=&quot;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_temperature_humidity_sensor;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-39&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry width=&quot;69.7291507916553&quot; height=&quot;69.7291507916553&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-38&quot; value=&quot;&quot; style=&quot;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.private_key;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-39&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;55.09433962264152&quot; y=&quot;54.883720930232556&quot; width=&quot;41.320754716981135&quot; height=&quot;41.16279069767441&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;QpVrh31kPz-CHikbTkFE-40&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;&quot; parent=&quot;QpVrh31kPz-CHikbTkFE-42&quot; source=&quot;QpVrh31kPz-CHikbTkFE-37&quot; target=&quot;QpVrh31kPz-CHikbTkFE-3&quot; edge=&quot;1&quot;&gt;&#10;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;      &lt;/root&gt;&#10;    &lt;/mxGraphModel&gt;&#10;  &lt;/diagram&gt;&#10;&lt;/mxfile&gt;&#10;"
+    onclick="(function(svg){var src=window.event.target||window.event.srcElement;while (src!=null&amp;&amp;src.nodeName.toLowerCase()!='a'){src=src.parentNode;}if(src==null){if(svg.wnd!=null&amp;&amp;!svg.wnd.closed){svg.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&amp;&amp;evt.source==svg.wnd){svg.wnd.postMessage(decodeURIComponent(svg.getAttribute('content')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);svg.wnd=window.open('https://viewer.diagrams.net/?client=1&amp;page=0&amp;edit=_blank');}}})(this);">
+    <defs />
+    <g>
+        <g data-cell-id="0">
+            <g data-cell-id="1">
+                <g data-cell-id="QpVrh31kPz-CHikbTkFE-42">
+                    <g />
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-1">
+                        <g>
+                            <path d="M 0 137.21 L 578.49 137.21 L 578.49 521.4 L 0 521.4 Z"
+                                fill="none" stroke="#232f3e" stroke-miterlimit="10"
+                                pointer-events="none"
+                                style="stroke: light-dark(rgb(35, 47, 62), rgb(189, 199, 212));" />
+                            <path
+                                d="M 6.09 144.39 C 6.01 144.39 5.93 144.4 5.85 144.4 C 5.5 144.4 5.15 144.44 4.81 144.53 C 4.53 144.6 4.25 144.7 3.98 144.83 C 3.9 144.86 3.84 144.91 3.79 144.97 C 3.75 145.04 3.74 145.12 3.74 145.2 L 3.74 145.53 C 3.74 145.67 3.79 145.74 3.89 145.74 L 3.99 145.74 L 4.22 145.65 C 4.45 145.56 4.69 145.48 4.94 145.42 C 5.17 145.37 5.41 145.34 5.65 145.34 C 6.04 145.3 6.43 145.41 6.73 145.65 C 6.97 145.95 7.09 146.33 7.05 146.71 L 7.05 147.2 C 6.79 147.14 6.54 147.09 6.29 147.05 C 6.05 147.02 5.81 147 5.57 147 C 4.98 146.97 4.4 147.15 3.94 147.52 C 3.54 147.86 3.32 148.36 3.34 148.89 C 3.31 149.36 3.49 149.83 3.82 150.17 C 4.18 150.5 4.66 150.67 5.15 150.65 C 5.91 150.66 6.63 150.32 7.11 149.72 C 7.18 149.87 7.24 150 7.31 150.12 C 7.38 150.23 7.46 150.33 7.55 150.42 C 7.6 150.48 7.67 150.52 7.75 150.52 C 7.81 150.52 7.87 150.5 7.92 150.46 L 8.34 150.18 C 8.41 150.14 8.46 150.06 8.47 149.98 C 8.47 149.93 8.45 149.88 8.42 149.83 C 8.34 149.68 8.26 149.52 8.21 149.35 C 8.15 149.16 8.12 148.96 8.13 148.76 L 8.14 146.58 C 8.2 145.98 8 145.39 7.59 144.95 C 7.17 144.59 6.64 144.4 6.09 144.39 Z M 19.89 144.4 C 19.78 144.4 19.68 144.4 19.57 144.41 C 19.29 144.41 19 144.44 18.73 144.52 C 18.47 144.59 18.23 144.71 18.02 144.87 C 17.82 145.01 17.66 145.2 17.54 145.42 C 17.42 145.63 17.35 145.88 17.36 146.13 C 17.36 146.48 17.48 146.82 17.69 147.1 C 17.97 147.43 18.34 147.67 18.76 147.77 L 19.72 148.08 C 19.97 148.14 20.2 148.26 20.39 148.43 C 20.51 148.55 20.58 148.72 20.57 148.89 C 20.58 149.15 20.45 149.39 20.23 149.52 C 19.93 149.69 19.6 149.77 19.26 149.75 C 18.99 149.75 18.72 149.72 18.46 149.66 C 18.22 149.61 17.98 149.53 17.75 149.43 L 17.59 149.36 C 17.54 149.35 17.5 149.35 17.46 149.36 C 17.36 149.36 17.31 149.43 17.31 149.57 L 17.31 149.9 C 17.31 149.97 17.32 150.03 17.35 150.09 C 17.4 150.18 17.47 150.24 17.56 150.28 C 17.8 150.4 18.06 150.49 18.32 150.55 C 18.66 150.62 19 150.66 19.35 150.66 L 19.33 150.67 C 19.66 150.66 19.98 150.61 20.29 150.51 C 20.55 150.43 20.8 150.3 21.01 150.13 C 21.21 149.98 21.38 149.78 21.49 149.55 C 21.61 149.3 21.67 149.04 21.66 148.77 C 21.67 148.44 21.56 148.11 21.36 147.84 C 21.09 147.53 20.73 147.3 20.33 147.2 L 19.39 146.9 C 19.13 146.82 18.88 146.7 18.67 146.53 C 18.54 146.41 18.47 146.24 18.47 146.06 C 18.46 145.82 18.58 145.59 18.79 145.46 C 19.06 145.32 19.36 145.26 19.67 145.27 C 20.11 145.27 20.55 145.35 20.96 145.53 C 21.04 145.58 21.12 145.61 21.21 145.62 C 21.31 145.62 21.36 145.55 21.36 145.4 L 21.36 145.09 C 21.37 145.01 21.35 144.93 21.31 144.87 C 21.25 144.8 21.18 144.75 21.11 144.7 L 20.83 144.59 L 20.45 144.48 L 20.01 144.41 C 19.97 144.41 19.93 144.4 19.89 144.4 Z M 16.02 144.56 C 15.94 144.56 15.86 144.59 15.79 144.63 C 15.72 144.7 15.68 144.8 15.66 144.9 L 14.51 149.35 L 13.47 144.92 C 13.45 144.82 13.41 144.73 13.34 144.65 C 13.26 144.6 13.17 144.58 13.07 144.59 L 12.54 144.59 C 12.44 144.58 12.35 144.6 12.27 144.65 C 12.2 144.72 12.15 144.82 12.14 144.92 L 11.09 149.35 L 9.97 144.91 C 9.95 144.81 9.91 144.72 9.84 144.65 C 9.76 144.59 9.67 144.57 9.58 144.58 L 8.92 144.58 C 8.81 144.58 8.76 144.64 8.76 144.75 C 8.77 144.84 8.79 144.93 8.82 145.02 L 10.38 150.16 C 10.4 150.26 10.45 150.35 10.52 150.42 C 10.6 150.47 10.69 150.5 10.78 150.49 L 11.36 150.47 C 11.46 150.48 11.55 150.46 11.63 150.4 C 11.7 150.33 11.74 150.24 11.76 150.14 L 12.79 145.85 L 13.82 150.14 C 13.83 150.24 13.88 150.33 13.95 150.4 C 14.03 150.46 14.12 150.48 14.21 150.47 L 14.79 150.47 C 14.88 150.48 14.97 150.46 15.04 150.41 C 15.11 150.34 15.16 150.24 15.18 150.14 L 16.79 145 C 16.84 144.93 16.84 144.84 16.84 144.84 C 16.84 144.8 16.84 144.77 16.84 144.73 C 16.84 144.69 16.82 144.64 16.79 144.61 C 16.76 144.58 16.72 144.56 16.67 144.57 L 16.05 144.57 C 16.04 144.57 16.03 144.56 16.02 144.56 Z M 5.65 147.83 C 5.7 147.82 5.75 147.83 5.8 147.83 L 6.43 147.83 C 6.64 147.85 6.85 147.88 7.06 147.92 L 7.07 148.22 C 7.07 148.42 7.05 148.61 7 148.8 C 6.96 148.96 6.88 149.1 6.77 149.22 C 6.61 149.42 6.39 149.57 6.14 149.65 C 5.91 149.73 5.67 149.77 5.43 149.77 C 5.18 149.8 4.93 149.74 4.73 149.58 C 4.55 149.39 4.46 149.13 4.49 148.87 C 4.47 148.57 4.59 148.29 4.81 148.1 C 5.06 147.93 5.35 147.83 5.65 147.83 Z M 21.04 151.93 C 20.34 151.94 19.51 152.1 18.89 152.54 C 18.69 152.67 18.72 152.84 18.94 152.84 C 19.64 152.75 21.21 152.56 21.5 152.92 C 21.78 153.27 21.19 154.75 20.94 155.42 C 20.86 155.62 21.04 155.7 21.21 155.55 C 22.39 154.57 22.72 152.51 22.46 152.21 C 22.32 152.06 21.74 151.92 21.04 151.93 Z M 2.65 152.31 C 2.5 152.33 2.42 152.51 2.58 152.65 C 5.29 155.1 8.82 156.44 12.48 156.42 C 15.37 156.43 18.2 155.57 20.59 153.95 C 20.95 153.68 20.64 153.28 20.26 153.44 C 17.87 154.45 15.3 154.97 12.71 154.98 C 9.23 154.99 5.82 154.08 2.81 152.35 C 2.75 152.32 2.7 152.31 2.65 152.31 Z M 0 137.21 L 25 137.21 L 25 162.21 L 0 162.21 Z"
+                                fill="#232f3e" stroke="none" pointer-events="all"
+                                style="fill: light-dark(rgb(35, 47, 62), rgb(189, 199, 212));" />
+                        </g>
+                        <g>
+                            <g>
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;"
+                                        pointer-events="none" width="100%" height="100%"
+                                        requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div xmlns="http://www.w3.org/1999/xhtml"
+                                            style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 546px; height: 1px; padding-top: 144px; margin-left: 32px;">
+                                            <div
+                                                style="box-sizing: border-box; font-size: 0; text-align: left; color: #232F3E; ">
+                                                <div
+                                                    style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#232F3E, #bdc7d4); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">AWS
+                                                    Cloud</div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="32" y="156" fill="#232F3E" font-family="Helvetica"
+                                        font-size="12px">AWS Cloud</text>
+                                </switch>
+                            </g>
+                        </g>
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-2">
+                        <g>
+                            <path d="M 27.55 178.37 L 578.49 178.37 L 578.49 521.4 L 27.55 521.4 Z"
+                                fill="none" stroke="#00a4a6" stroke-miterlimit="10"
+                                stroke-dasharray="3 3" pointer-events="none"
+                                style="stroke: light-dark(rgb(0, 164, 166), rgb(15, 156, 158));" />
+                            <path
+                                d="M 35.6 181.84 C 35.02 181.84 34.54 182.32 34.54 182.9 C 34.54 183.36 34.85 183.76 35.26 183.9 L 35.26 199.19 L 33.5 199.19 L 33.5 199.94 L 37.71 199.94 L 37.71 199.19 L 36.01 199.19 L 36.01 191.13 L 47.39 191.13 L 44.74 187.97 L 47.38 184.73 L 36.01 184.73 L 36.01 183.88 C 36.39 183.72 36.66 183.34 36.66 182.9 C 36.66 182.32 36.18 181.84 35.6 181.84 Z M 35.6 182.59 C 35.78 182.59 35.91 182.73 35.91 182.9 C 35.91 183.08 35.78 183.21 35.6 183.21 C 35.43 183.21 35.29 183.08 35.29 182.9 C 35.29 182.73 35.43 182.59 35.6 182.59 Z M 36.01 185.48 L 45.8 185.48 L 43.76 187.97 L 45.78 190.38 L 36.01 190.38 Z M 27.55 203.37 L 27.55 178.37 L 52.55 178.37 L 52.55 203.37 Z"
+                                fill="#00a4a6" stroke="none" pointer-events="all"
+                                style="fill: light-dark(rgb(0, 164, 166), rgb(15, 156, 158));" />
+                        </g>
+                        <g>
+                            <g>
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;"
+                                        pointer-events="none" width="100%" height="100%"
+                                        requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div xmlns="http://www.w3.org/1999/xhtml"
+                                            style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 519px; height: 1px; padding-top: 185px; margin-left: 60px;">
+                                            <div
+                                                style="box-sizing: border-box; font-size: 0; text-align: left; color: #147EBA; ">
+                                                <div
+                                                    style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#147EBA, #45a0d4); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                                    Region</div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="60" y="197" fill="#147EBA" font-family="Helvetica"
+                                        font-size="12px">Region</text>
+                                </switch>
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-5">
+                            <g>
+                                <path d="M 234.15 214.6 L 77.78 214.56 L 77.78 309.74" fill="none"
+                                    stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 77.78 314.99 L 74.28 307.99 L 77.78 309.74 L 81.28 307.99 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-20">
+                            <g>
+                                <path d="M 234.15 239.84 L 234.22 278 L 132.56 278 L 132.56 309.74"
+                                    fill="none" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 132.56 314.99 L 129.06 307.99 L 132.56 309.74 L 136.06 307.99 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-3">
+                            <g>
+                                <path
+                                    d="M 234.15 189.35 L 284.64 189.35 L 284.64 239.84 L 234.15 239.84 Z"
+                                    fill="#7aa116" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(122, 161, 22), rgb(97, 130, 11));" />
+                                <path
+                                    d="M 273.51 218.96 C 270.96 218.96 268.88 216.88 268.88 214.32 C 268.88 211.76 270.96 209.68 273.51 209.68 C 276.07 209.68 278.15 211.76 278.15 214.32 C 278.15 216.88 276.07 218.96 273.51 218.96 M 264.45 228.79 L 264.45 215.32 L 267.52 215.32 C 267.99 218.1 270.33 220.24 273.2 220.39 C 271.59 224.37 268.37 227.38 264.45 228.79 M 260.12 229.65 L 260.12 206.51 C 262.91 206.18 265.13 203.95 265.44 201.15 C 268.65 202.58 271.28 205.13 272.81 208.29 C 269.93 208.62 267.67 210.97 267.46 213.87 L 263.73 213.87 C 263.33 213.87 263 214.2 263 214.6 L 263 229.23 C 262.07 229.46 261.1 229.6 260.12 229.65 M 255.79 229.23 L 255.79 214.68 C 255.79 214.29 255.48 213.97 255.08 213.96 L 251.34 213.89 C 251.13 210.97 248.86 208.62 245.99 208.29 C 247.52 205.13 250.14 202.58 253.36 201.15 C 253.67 203.95 255.88 206.18 258.68 206.51 L 258.68 229.65 C 257.69 229.6 256.72 229.46 255.79 229.23 M 245.59 220.39 C 248.46 220.24 250.8 218.09 251.27 215.32 L 254.35 215.32 L 254.35 228.79 C 250.42 227.38 247.21 224.37 245.59 220.39 M 240.64 214.32 C 240.64 211.76 242.72 209.68 245.28 209.68 C 247.84 209.68 249.92 211.76 249.92 214.32 C 249.92 216.88 247.84 218.96 245.28 218.96 C 242.72 218.96 240.64 216.88 240.64 214.32 M 259.4 195.84 C 261.95 195.84 264.03 197.92 264.03 200.48 C 264.03 203.03 261.95 205.12 259.4 205.12 C 256.84 205.12 254.76 203.03 254.76 200.48 C 254.76 197.92 256.84 195.84 259.4 195.84 M 279.6 214.32 C 279.6 211.27 277.34 208.75 274.41 208.31 C 272.7 204.36 269.48 201.19 265.47 199.58 L 265.42 199.7 C 265.04 196.72 262.49 194.4 259.4 194.4 C 256.31 194.4 253.75 196.72 253.37 199.7 L 253.32 199.58 C 249.32 201.19 246.09 204.36 244.39 208.31 C 241.46 208.75 239.2 211.27 239.2 214.32 C 239.2 217.24 241.26 219.68 244.01 220.26 C 245.74 225.13 249.6 228.79 254.35 230.32 L 254.35 234.79 L 255.79 234.79 L 255.79 230.71 C 256.73 230.92 257.69 231.05 258.68 231.09 L 258.68 234.79 L 260.12 234.79 L 260.12 231.09 C 261.1 231.05 262.07 230.92 263 230.71 L 263 234.79 L 264.45 234.79 L 264.45 230.32 C 269.19 228.79 273.05 225.13 274.79 220.26 C 277.53 219.68 279.6 217.24 279.6 214.32"
+                                    fill="#ffffff" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-7">
+                            <g>
+                                <path d="M 77.78 367.95 L 77.78 408.11 L 77.68 441.96" fill="none"
+                                    stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 77.67 447.21 L 74.19 440.2 L 77.68 441.96 L 81.19 440.22 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-4">
+                            <g>
+                                <rect x="62.16" y="315.58" width="31.2" height="52.9" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 86.05 342.13 L 86.05 334.81 C 86.05 334.16 85.53 333.64 84.88 333.64 L 70.66 333.64 C 70.01 333.64 69.48 334.16 69.48 334.81 L 69.48 342.13 L 71.83 342.13 L 71.83 337.32 L 76.99 342.15 C 77.21 342.36 77.5 342.47 77.79 342.47 C 78.07 342.47 78.36 342.36 78.59 342.15 L 83.71 337.36 L 83.71 342.13 Z M 77.79 339.69 L 73.82 335.98 L 81.75 335.98 Z M 91.26 341.74 C 91.25 341.57 91.24 341.39 91.19 341.25 C 90.85 340.04 89.61 339.09 87.41 338.33 L 86.65 340.55 C 88.2 341.08 88.77 341.59 88.9 341.82 C 88.55 342.61 84.65 344.29 77.79 344.29 C 70.91 344.29 67.02 342.61 66.67 341.82 C 66.8 341.6 67.36 341.08 68.92 340.55 L 68.16 338.33 C 65.96 339.09 64.72 340.04 64.38 341.24 C 64.34 341.4 64.32 341.57 64.31 341.74 L 64.29 341.74 C 64.29 341.77 64.3 341.79 64.3 341.81 C 64.3 341.84 64.29 341.86 64.29 341.88 L 64.29 363.08 C 64.29 366.43 71.29 367.95 77.79 367.95 C 84.29 367.95 91.28 366.43 91.28 363.08 L 91.28 341.88 C 91.28 341.86 91.27 341.84 91.27 341.81 C 91.27 341.79 91.28 341.77 91.28 341.74 Z M 77.79 365.61 C 70.72 365.61 66.77 363.83 66.63 363.08 L 66.64 344.65 C 69.23 345.99 73.61 346.63 77.79 346.63 C 81.97 346.63 86.34 345.99 88.94 344.65 L 88.94 363.07 C 88.8 363.83 84.84 365.61 77.79 365.61 Z M 88.02 316.11 C 85.08 316.11 82.69 318.5 82.69 321.44 C 82.69 322.39 82.96 323.27 83.4 324.04 L 77.68 327.92 L 71.67 323.85 L 71.67 317.36 C 71.67 316.71 71.15 316.18 70.5 316.18 L 63.33 316.18 C 62.68 316.18 62.16 316.71 62.16 317.36 L 62.16 324.52 C 62.16 325.17 62.68 325.69 63.33 325.69 L 70.22 325.69 L 76.6 330.01 L 76.6 332.83 L 78.94 332.83 L 78.94 329.89 L 84.97 325.81 C 85.84 326.41 86.89 326.78 88.02 326.78 C 90.96 326.78 93.36 324.38 93.36 321.44 C 93.36 318.5 90.96 316.11 88.02 316.11 Z M 64.5 323.35 L 64.5 318.53 L 69.33 318.53 L 69.33 323.35 Z M 88.02 324.43 C 86.37 324.43 85.03 323.09 85.03 321.44 C 85.03 319.79 86.37 318.45 88.02 318.45 C 89.67 318.45 91.02 319.79 91.02 321.44 C 91.02 323.09 89.67 324.43 88.02 324.43 Z"
+                                    fill="#7aa116" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(122, 161, 22), rgb(97, 130, 11));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-9">
+                            <g>
+                                <path d="M 94.42 465.11 L 179.78 465.11 L 179.78 464 L 258.77 464"
+                                    fill="none" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path d="M 264.02 464 L 257.02 467.5 L 258.77 464 L 257.02 460.5 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-6">
+                            <g>
+                                <rect x="60.76" y="448.33" width="33.66" height="33.66" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 62.29 465.16 C 62.29 456.73 69.15 449.86 77.59 449.86 C 86.02 449.86 92.89 456.73 92.89 465.16 C 92.89 473.6 86.02 480.46 77.59 480.46 C 69.15 480.46 62.29 473.6 62.29 465.16 Z M 60.76 465.16 C 60.76 474.44 68.31 481.99 77.59 481.99 C 86.87 481.99 94.42 474.44 94.42 465.16 C 94.42 455.88 86.87 448.33 77.59 448.33 C 68.31 448.33 60.76 455.88 60.76 465.16 Z M 72.41 473.77 L 68.31 473.77 L 73.17 463.6 L 75.22 467.83 Z M 73.85 461.5 C 73.72 461.24 73.45 461.07 73.16 461.07 L 73.16 461.07 C 72.86 461.07 72.6 461.24 72.47 461.51 L 66.41 474.2 C 66.29 474.44 66.31 474.72 66.45 474.94 C 66.59 475.16 66.84 475.3 67.1 475.3 L 72.89 475.3 C 73.19 475.3 73.46 475.13 73.59 474.86 L 76.76 468.16 C 76.86 467.95 76.86 467.71 76.75 467.5 Z M 86.86 473.77 L 82.69 473.77 L 75.11 457.48 C 74.98 457.21 74.71 457.03 74.42 457.03 L 71.66 457.03 L 71.66 453.88 L 77.18 453.88 L 84.73 470.17 C 84.86 470.44 85.13 470.61 85.43 470.61 L 86.86 470.61 Z M 85.91 469.08 L 78.37 452.79 C 78.24 452.52 77.97 452.35 77.67 452.35 L 70.9 452.35 C 70.48 452.35 70.13 452.69 70.13 453.11 L 70.13 457.8 C 70.13 458 70.21 458.2 70.35 458.34 C 70.5 458.48 70.69 458.56 70.89 458.56 L 73.93 458.56 L 81.51 474.86 C 81.64 475.13 81.91 475.3 82.2 475.3 L 87.63 475.3 C 88.05 475.3 88.39 474.96 88.39 474.53 L 88.39 469.85 C 88.39 469.43 88.05 469.08 87.63 469.08 Z"
+                                    fill="#ed7100" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(237, 113, 0), rgb(216, 109, 12));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-8">
+                            <g>
+                                <path
+                                    d="M 265.14 439.07 L 315.03 439.07 L 315.03 488.96 L 265.14 488.96 Z"
+                                    fill="#c925d1" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(201, 37, 209), rgb(255, 124, 255));" />
+                                <path
+                                    d="M 298.67 474.6 C 296.3 476.52 291.3 477.54 286.53 477.54 C 281.75 477.54 276.76 476.52 274.38 474.6 L 274.38 478.47 L 274.38 478.47 C 274.38 480.41 279.37 482.56 286.53 482.56 C 293.68 482.56 298.67 480.41 298.67 478.48 Z M 298.68 467.24 L 300.1 467.23 L 300.1 467.24 C 300.1 468.1 299.67 468.9 298.83 469.64 C 299.85 470.54 300.1 471.41 300.1 472.04 C 300.1 472.04 300.1 472.05 300.1 472.05 L 300.1 478.47 L 300.1 478.47 C 300.1 482.04 293.11 483.97 286.53 483.97 C 279.96 483.97 272.99 482.05 272.96 478.5 C 272.96 478.49 272.95 478.49 272.95 478.49 L 272.95 472.04 C 272.95 472.04 272.96 472.03 272.96 472.03 C 272.96 471.41 273.21 470.53 274.23 469.64 C 273.22 468.75 272.96 467.88 272.96 467.25 L 272.96 467.25 C 272.96 467.25 272.95 467.25 272.95 467.25 L 272.95 460.8 C 272.95 460.8 272.96 460.79 272.96 460.79 C 272.96 460.16 273.21 459.29 274.23 458.4 C 273.22 457.51 272.96 456.63 272.96 456.01 L 272.96 456.01 C 272.96 456.01 272.95 456.01 272.95 456.01 L 272.95 449.56 C 272.95 449.55 272.96 449.55 272.96 449.55 C 272.97 445.98 279.95 444.06 286.53 444.06 C 290.24 444.06 293.81 444.65 296.32 445.68 L 295.77 446.98 C 293.43 446.02 290.06 445.47 286.53 445.47 C 279.37 445.47 274.38 447.63 274.38 449.56 C 274.38 451.49 279.37 453.65 286.53 453.65 C 286.72 453.65 286.91 453.65 287.1 453.64 L 287.16 455.05 C 286.95 455.06 286.74 455.06 286.53 455.06 C 281.75 455.06 276.76 454.04 274.38 452.12 L 274.38 455.99 L 274.38 455.99 L 274.38 456.01 C 274.39 456.75 275.15 457.4 275.79 457.81 C 277.7 459.03 281.14 459.86 284.97 460.04 L 284.9 461.45 C 281.02 461.27 277.62 460.47 275.44 459.23 C 274.9 459.64 274.38 460.18 274.38 460.8 C 274.38 462.73 279.37 464.89 286.53 464.89 C 287.23 464.89 287.93 464.86 288.6 464.82 L 288.7 466.23 C 287.99 466.28 287.26 466.3 286.53 466.3 C 281.75 466.3 276.76 465.28 274.38 463.36 L 274.38 467.23 L 274.38 467.23 C 274.39 467.99 275.15 468.64 275.79 469.05 C 277.98 470.45 282.09 471.32 286.53 471.32 L 286.84 471.32 L 286.84 472.73 L 286.53 472.73 C 282.02 472.73 277.93 471.9 275.43 470.48 C 274.89 470.88 274.38 471.43 274.38 472.04 C 274.38 473.97 279.37 476.13 286.53 476.13 C 293.68 476.13 298.67 473.98 298.67 472.05 L 298.67 472.04 L 298.67 472.04 C 298.67 471.42 298.16 470.88 297.62 470.48 C 297.27 470.68 296.9 470.87 296.48 471.04 L 295.93 469.73 C 296.45 469.52 296.9 469.29 297.27 469.05 C 297.91 468.63 298.68 467.98 298.68 467.24 Z M 304.78 456.9 L 300.79 456.9 C 300.55 456.9 300.33 456.78 300.2 456.59 C 300.06 456.4 300.04 456.15 300.12 455.93 L 302.55 449.86 L 293.35 449.86 L 289.08 458.34 L 293.62 458.34 C 293.85 458.34 294.07 458.45 294.2 458.63 C 294.33 458.82 294.37 459.05 294.3 459.26 L 290.24 471.92 Z M 306.97 456.68 L 289.15 475.09 C 289.01 475.23 288.82 475.31 288.64 475.31 C 288.51 475.31 288.38 475.28 288.27 475.21 C 287.99 475.04 287.86 474.7 287.96 474.39 L 292.65 459.76 L 287.92 459.76 C 287.68 459.76 287.45 459.63 287.32 459.42 C 287.19 459.21 287.17 458.95 287.29 458.73 L 292.27 448.84 C 292.4 448.6 292.64 448.45 292.91 448.45 L 303.6 448.45 C 303.84 448.45 304.06 448.56 304.19 448.76 C 304.33 448.95 304.35 449.2 304.27 449.41 L 301.84 455.49 L 306.45 455.49 C 306.74 455.49 307 455.66 307.11 455.92 C 307.22 456.18 307.17 456.48 306.97 456.68 Z M 275.42 478.75 C 276.43 479.32 277.7 479.8 279.2 480.17 L 279.54 478.8 C 278.19 478.46 277.01 478.02 276.12 477.52 Z M 279.2 468.86 L 279.54 467.49 C 278.19 467.15 277.01 466.71 276.12 466.21 L 275.42 467.44 C 276.43 468.01 277.7 468.49 279.2 468.86 Z M 275.42 456.13 L 276.12 454.9 C 277.01 455.4 278.19 455.84 279.54 456.18 L 279.2 457.55 C 277.7 457.18 276.43 456.7 275.42 456.13 Z"
+                                    fill="#ffffff" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-22">
+                            <g>
+                                <path d="M 147.8 442.11 L 206.44 442.11 L 206.44 464 L 258.77 464"
+                                    fill="none" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path d="M 264.02 464 L 257.02 467.5 L 258.77 464 L 257.02 460.5 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-18">
+                            <g>
+                                <rect x="114.14" y="425.35" width="33.66" height="33.66" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 115.67 442.18 C 115.67 433.74 122.54 426.88 130.97 426.88 C 139.41 426.88 146.27 433.74 146.27 442.18 C 146.27 450.62 139.41 457.48 130.97 457.48 C 122.54 457.48 115.67 450.62 115.67 442.18 Z M 114.14 442.18 C 114.14 451.46 121.69 459.01 130.97 459.01 C 140.25 459.01 147.8 451.46 147.8 442.18 C 147.8 432.9 140.25 425.35 130.97 425.35 C 121.69 425.35 114.14 432.9 114.14 442.18 Z M 125.79 450.79 L 121.7 450.79 L 126.55 440.62 L 128.6 444.85 Z M 127.24 438.52 C 127.11 438.26 126.84 438.09 126.55 438.09 L 126.54 438.09 C 126.25 438.09 125.98 438.26 125.86 438.52 L 119.79 451.22 C 119.68 451.46 119.7 451.74 119.84 451.96 C 119.98 452.18 120.22 452.32 120.49 452.32 L 126.28 452.32 C 126.58 452.32 126.84 452.15 126.97 451.88 L 130.14 445.18 C 130.24 444.97 130.24 444.72 130.14 444.51 Z M 140.25 450.79 L 136.08 450.79 L 128.5 434.49 C 128.37 434.22 128.1 434.05 127.8 434.05 L 125.05 434.05 L 125.05 430.9 L 130.57 430.9 L 138.12 447.19 C 138.24 447.46 138.51 447.63 138.81 447.63 L 140.25 447.63 Z M 139.3 446.1 L 131.75 429.81 C 131.63 429.54 131.36 429.37 131.06 429.37 L 124.28 429.37 C 123.86 429.37 123.52 429.71 123.52 430.13 L 123.51 434.82 C 123.51 435.02 123.59 435.21 123.74 435.36 C 123.88 435.5 124.08 435.58 124.28 435.58 L 127.31 435.58 L 134.9 451.87 C 135.02 452.14 135.29 452.32 135.59 452.32 L 141.01 452.32 C 141.44 452.32 141.78 451.97 141.78 451.55 L 141.78 446.87 C 141.78 446.44 141.44 446.1 141.01 446.1 Z"
+                                    fill="#ed7100" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(237, 113, 0), rgb(216, 109, 12));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-21">
+                            <g>
+                                <path d="M 132.56 367.95 L 132.56 396.56 L 131 396.56 L 131 418.98"
+                                    fill="none" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path d="M 131 424.23 L 127.5 417.23 L 131 418.98 L 134.5 417.23 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-19">
+                            <g>
+                                <rect x="116.97" y="315.58" width="31.2" height="52.9" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 140.86 342.13 L 140.86 334.81 C 140.86 334.16 140.33 333.64 139.69 333.64 L 125.46 333.64 C 124.81 333.64 124.29 334.16 124.29 334.81 L 124.29 342.13 L 126.63 342.13 L 126.63 337.32 L 131.79 342.15 C 132.02 342.36 132.3 342.47 132.59 342.47 C 132.88 342.47 133.17 342.36 133.39 342.15 L 138.51 337.36 L 138.51 342.13 Z M 132.59 339.69 L 128.63 335.98 L 136.56 335.98 Z M 146.07 341.74 C 146.05 341.57 146.04 341.39 145.99 341.25 C 145.65 340.04 144.42 339.09 142.21 338.33 L 141.45 340.55 C 143.01 341.08 143.57 341.59 143.71 341.82 C 143.35 342.61 139.45 344.29 132.59 344.29 C 125.72 344.29 121.82 342.61 121.47 341.82 C 121.61 341.6 122.17 341.08 123.73 340.55 L 122.97 338.33 C 120.77 339.09 119.53 340.04 119.19 341.24 C 119.14 341.4 119.13 341.57 119.12 341.74 L 119.1 341.74 C 119.1 341.77 119.11 341.79 119.11 341.81 C 119.11 341.84 119.1 341.86 119.1 341.88 L 119.1 363.08 C 119.1 366.43 126.09 367.95 132.59 367.95 C 139.09 367.95 146.09 366.43 146.09 363.08 L 146.09 341.88 C 146.09 341.86 146.08 341.84 146.07 341.81 C 146.08 341.79 146.09 341.77 146.09 341.74 Z M 132.59 365.61 C 125.53 365.61 121.57 363.83 121.44 363.08 L 121.44 344.65 C 124.04 345.99 128.41 346.63 132.59 346.63 C 136.77 346.63 141.15 345.99 143.74 344.65 L 143.74 363.07 C 143.61 363.83 139.65 365.61 132.59 365.61 Z M 142.83 316.11 C 139.89 316.11 137.49 318.5 137.49 321.44 C 137.49 322.39 137.77 323.27 138.2 324.04 L 132.48 327.92 L 126.48 323.85 L 126.48 317.36 C 126.48 316.71 125.95 316.18 125.3 316.18 L 118.14 316.18 C 117.49 316.18 116.97 316.71 116.97 317.36 L 116.97 324.52 C 116.97 325.17 117.49 325.69 118.14 325.69 L 125.03 325.69 L 131.4 330.01 L 131.4 332.83 L 133.74 332.83 L 133.74 329.89 L 139.78 325.81 C 140.64 326.41 141.69 326.78 142.83 326.78 C 145.77 326.78 148.16 324.38 148.16 321.44 C 148.16 318.5 145.77 316.11 142.83 316.11 Z M 119.31 323.35 L 119.31 318.53 L 124.13 318.53 L 124.13 323.35 Z M 142.83 324.43 C 141.18 324.43 139.84 323.09 139.84 321.44 C 139.84 319.79 141.18 318.45 142.83 318.45 C 144.48 318.45 145.82 319.79 145.82 321.44 C 145.82 323.09 144.48 324.43 142.83 324.43 Z"
+                                    fill="#7aa116" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(122, 161, 22), rgb(97, 130, 11));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-30">
+                            <g>
+                                <path d="M 515.22 362 L 515.22 403.44 L 515.69 438.4" fill="none"
+                                    stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 515.76 443.65 L 512.17 436.69 L 515.69 438.4 L 519.17 436.6 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-23">
+                            <g>
+                                <path
+                                    d="M 523.48 315.59 C 522.63 315.58 521.85 315.67 521.13 315.86 L 520.59 316.01 L 518.29 316.63 L 512.41 318.22 L 506.71 319.77 L 491.17 323.99 L 491.17 355.95 L 513.97 362 L 539.26 355.22 L 539.26 347.64 L 524.41 343.62 L 531.82 341.65 L 531.96 341.61 C 536.6 340.42 539.26 336.54 539.26 330.82 C 539.26 325.04 535.94 319.02 528.16 316.44 C 526.45 315.88 524.88 315.6 523.48 315.59 Z M 523.6 319.39 C 524.55 319.41 525.68 319.62 526.96 320.05 C 532.56 321.9 535.46 326 535.46 330.82 C 535.46 334.92 533.86 337.24 530.92 337.96 L 530.88 337.97 L 522.54 340.2 L 522.54 347.05 L 535.46 350.54 L 535.46 352.31 L 513.96 358.07 L 494.96 353.03 L 494.96 326.89 L 509.81 322.86 L 518.12 320.61 L 521.11 319.8 L 522.1 319.53 C 522.53 319.42 523.03 319.37 523.6 319.39 Z M 509.72 328.73 L 509.72 337.89 L 513.88 336.77 L 513.88 342.07 L 509.72 343.19 L 509.72 347.88 L 518.43 350.19 L 518.43 331.04 Z M 508.39 338.54 L 504.04 339.71 L 504.04 344.64 L 508.39 343.47 Z M 502.15 340.61 L 498.36 341.62 L 498.36 345.77 L 502.15 344.75 Z"
+                                    fill="#ff6a00" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(255, 106, 0), rgb(233, 105, 14));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-25">
+                            <g>
+                                <path d="M 495.85 464.78 L 405.44 464.78 L 321.4 464.05" fill="none"
+                                    stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 316.15 464.01 L 323.18 460.57 L 321.4 464.05 L 323.12 467.57 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-26">
+                            <g>
+                                <path d="M 515.78 444.76 L 515.78 403.44 L 515.31 368.37"
+                                    fill="none" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="stroke"
+                                    style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                                <path
+                                    d="M 515.24 363.12 L 518.83 370.07 L 515.31 368.37 L 511.83 370.16 Z"
+                                    fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-24">
+                            <g>
+                                <rect x="495.85" y="444.76" width="39.91" height="39.91" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 497.67 464.72 C 497.67 454.72 505.8 446.58 515.81 446.58 C 525.81 446.58 533.95 454.72 533.95 464.72 C 533.95 474.72 525.81 482.86 515.81 482.86 C 505.8 482.86 497.67 474.72 497.67 464.72 Z M 495.85 464.72 C 495.85 475.73 504.8 484.68 515.81 484.68 C 526.81 484.68 535.76 475.73 535.76 464.72 C 535.76 453.72 526.81 444.76 515.81 444.76 C 504.8 444.76 495.85 453.72 495.85 464.72 Z M 509.67 474.92 L 504.81 474.92 L 510.56 462.87 L 513 467.89 Z M 511.37 460.38 C 511.22 460.07 510.91 459.87 510.56 459.87 L 510.56 459.87 C 510.21 459.87 509.89 460.07 509.74 460.39 L 502.55 475.44 C 502.42 475.72 502.44 476.05 502.6 476.32 C 502.77 476.58 503.06 476.74 503.37 476.74 L 510.24 476.74 C 510.59 476.74 510.91 476.54 511.06 476.22 L 514.82 468.27 C 514.94 468.02 514.94 467.74 514.82 467.49 Z M 526.8 474.92 L 521.86 474.92 L 512.87 455.61 C 512.72 455.29 512.4 455.08 512.05 455.08 L 508.78 455.08 L 508.78 451.34 L 515.33 451.34 L 524.28 470.66 C 524.43 470.98 524.75 471.18 525.1 471.18 L 526.8 471.18 Z M 525.68 469.37 L 516.73 450.05 C 516.58 449.73 516.26 449.53 515.91 449.53 L 507.88 449.53 C 507.37 449.53 506.97 449.93 506.97 450.43 L 506.96 455.99 C 506.96 456.23 507.06 456.46 507.23 456.63 C 507.4 456.8 507.63 456.9 507.87 456.9 L 511.47 456.9 L 520.46 476.22 C 520.61 476.54 520.93 476.74 521.28 476.74 L 527.71 476.74 C 528.21 476.74 528.62 476.33 528.62 475.83 L 528.62 470.28 C 528.62 469.77 528.21 469.37 527.71 469.37 Z"
+                                    fill="#ed7100" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(237, 113, 0), rgb(216, 109, 12));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-35">
+                            <g>
+                                <path
+                                    d="M 306.66 487.21 C 306.66 487.33 306.61 487.44 306.53 487.53 C 306.45 487.61 306.33 487.66 306.22 487.66 C 306.1 487.66 305.98 487.61 305.9 487.53 C 305.82 487.44 305.77 487.33 305.77 487.21 C 305.77 486.96 305.97 486.77 306.22 486.77 C 306.33 486.77 306.45 486.81 306.53 486.9 C 306.61 486.98 306.66 487.09 306.66 487.21 Z M 304.46 493.3 C 304.46 493.7 304.14 494.02 303.74 494.02 C 303.34 494.02 303.02 493.7 303.02 493.3 C 303.02 492.91 303.34 492.58 303.74 492.58 C 304.14 492.58 304.46 492.91 304.46 493.3 Z M 306.08 499.73 C 306.08 499.99 305.98 500.24 305.79 500.43 C 305.61 500.61 305.36 500.72 305.1 500.72 C 304.83 500.72 304.58 500.61 304.4 500.43 C 304.21 500.24 304.11 499.99 304.11 499.73 C 304.11 499.47 304.21 499.22 304.4 499.03 C 304.58 498.85 304.83 498.75 305.1 498.75 C 305.64 498.75 306.08 499.19 306.08 499.73 Z M 311.03 504.29 C 311.03 504.97 310.48 505.52 309.8 505.52 C 309.47 505.52 309.15 505.39 308.92 505.16 C 308.69 504.93 308.56 504.61 308.56 504.29 C 308.56 503.6 309.11 503.05 309.8 503.05 C 310.48 503.05 311.03 503.6 311.03 504.29 Z M 317.74 505.47 C 317.74 506.3 317.07 506.97 316.24 506.97 C 315.41 506.97 314.75 506.3 314.74 505.47 C 314.74 504.65 315.41 503.98 316.24 503.98 C 316.64 503.98 317.02 504.13 317.3 504.41 C 317.58 504.7 317.74 505.08 317.74 505.47 Z M 324.04 502.82 C 324.04 503.29 323.85 503.74 323.52 504.07 C 323.18 504.41 322.73 504.6 322.26 504.6 C 321.79 504.6 321.34 504.41 321 504.07 C 320.67 503.74 320.48 503.29 320.48 502.82 C 320.48 502.34 320.67 501.89 321 501.56 C 321.34 501.22 321.79 501.04 322.26 501.04 C 322.73 501.04 323.18 501.22 323.52 501.56 C 323.85 501.89 324.04 502.34 324.04 502.82 Z M 327.82 497.29 C 327.82 497.84 327.6 498.36 327.22 498.75 C 326.83 499.13 326.31 499.35 325.76 499.35 C 325.22 499.35 324.7 499.14 324.31 498.75 C 323.92 498.36 323.71 497.84 323.71 497.29 C 323.71 496.75 323.92 496.22 324.31 495.84 C 324.7 495.45 325.22 495.24 325.76 495.24 C 326.31 495.24 326.83 495.45 327.22 495.84 C 327.6 496.23 327.82 496.75 327.82 497.29 Z M 327.89 490.72 C 327.89 491.33 327.65 491.92 327.21 492.36 C 326.78 492.79 326.19 493.04 325.58 493.04 C 324.96 493.04 324.37 492.79 323.94 492.36 C 323.51 491.92 323.26 491.33 323.26 490.72 C 323.26 489.44 324.3 488.4 325.58 488.4 C 326.86 488.4 327.89 489.44 327.89 490.72 Z M 324.35 485.39 C 324.35 486.08 324.08 486.74 323.59 487.22 C 323.1 487.71 322.45 487.98 321.76 487.98 C 320.33 487.98 319.17 486.82 319.17 485.39 C 319.17 483.96 320.33 482.8 321.76 482.8 C 323.19 482.8 324.35 483.96 324.35 485.39 Z M 318.48 483.09 C 318.48 484.67 317.2 485.94 315.63 485.94 C 314.05 485.94 312.77 484.66 312.77 483.09 C 312.77 481.51 314.05 480.23 315.63 480.23 C 316.38 480.23 317.11 480.53 317.64 481.07 C 318.18 481.6 318.48 482.33 318.48 483.09 Z"
+                                    fill="#ffffff" stroke="#00cc00" stroke-miterlimit="10"
+                                    pointer-events="all"
+                                    style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 204, 0), rgb(0, 162, 0));" />
+                            </g>
+                        </g>
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-33">
+                        <g />
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-27">
+                        <g>
+                            <rect x="661.13" y="521.4" width="68.87" height="68.6" fill="none"
+                                stroke="none" pointer-events="all" />
+                            <path
+                                d="M 663.21 566.31 C 662.06 566.31 661.13 565.38 661.13 564.24 L 661.13 523.46 C 661.13 522.32 662.06 521.4 663.21 521.4 L 723.64 521.4 C 724.78 521.4 725.71 522.32 725.71 523.46 L 725.71 536.27 L 721.36 536.27 L 721.36 525.73 L 665.49 525.73 L 665.49 560.04 L 695.5 560.04 L 695.5 566.31 Z M 697.78 540.68 C 697.78 540.13 698 539.61 698.39 539.22 C 698.78 538.83 699.3 538.62 699.85 538.62 L 727.93 538.62 C 729.07 538.62 730 539.54 730 540.68 L 730 587.93 C 730 588.48 729.78 589.01 729.39 589.39 C 729 589.78 728.48 590 727.93 590 L 699.92 590 C 699.37 590 698.84 589.78 698.46 589.39 C 698.07 589.01 697.85 588.48 697.85 587.93 Z M 702.07 542.89 L 702.07 579.25 L 725.71 579.25 L 725.71 542.89 Z M 710.64 583.59 L 710.64 585.73 L 717.14 585.73 L 717.14 583.59 Z"
+                                fill="#505050" stroke="none" pointer-events="all"
+                                style="fill: light-dark(rgb(80, 80, 80), rgb(168, 168, 168));" />
+                        </g>
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-34">
+                        <g>
+                            <path d="M 539.26 338.78 L 688.67 338.78 L 688.68 515.03" fill="none"
+                                stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"
+                                style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            <path
+                                d="M 688.68 520.28 L 685.18 513.28 L 688.68 515.03 L 692.18 513.28 Z"
+                                fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                pointer-events="all"
+                                style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                        </g>
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-39">
+                        <g />
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-37">
+                            <g>
+                                <rect x="371.89" y="0" width="69.73" height="69.73" fill="none"
+                                    stroke="none" pointer-events="all" />
+                                <path
+                                    d="M 391.6 29.12 C 390.35 29.12 389.33 28.11 389.33 26.86 C 389.33 25.86 390.65 23.35 391.6 21.65 C 392.54 23.35 393.86 25.86 393.86 26.86 C 393.86 28.11 392.85 29.12 391.6 29.12 Z M 393.01 17.68 C 392.75 17.14 392.2 16.8 391.6 16.8 C 390.99 16.8 390.45 17.14 390.18 17.68 L 389.4 19.09 C 387.69 22.1 386.16 24.96 386.16 26.86 C 386.16 29.86 388.6 32.29 391.6 32.29 C 394.59 32.29 397.03 29.86 397.03 26.86 C 397.03 24.95 395.5 22.09 393.79 19.08 Z M 416.26 39.62 L 422.6 39.62 L 422.6 36.45 L 416.26 36.45 Z M 416.26 33.28 L 424.18 33.28 L 424.18 30.11 L 416.26 30.11 Z M 416.26 26.94 L 422.6 26.94 L 422.6 23.77 L 416.26 23.77 Z M 416.26 20.6 L 424.18 20.6 L 424.18 17.43 L 416.26 17.43 Z M 406.75 49.09 C 405.88 49.09 405.17 48.38 405.17 47.51 C 405.17 46.63 405.88 45.92 406.75 45.92 C 407.63 45.92 408.34 46.63 408.34 47.51 C 408.34 48.38 407.63 49.09 406.75 49.09 Z M 408.34 43.04 L 408.34 25.36 L 405.17 25.36 L 405.17 43.04 C 403.33 43.7 402 45.44 402 47.51 C 402 50.13 404.13 52.26 406.75 52.26 C 409.37 52.26 411.51 50.13 411.51 47.51 C 411.51 45.44 410.18 43.7 408.34 43.04 Z M 410.75 52.43 C 409.24 53.65 407.33 54.11 405.38 53.7 C 402.93 53.19 400.98 51.18 400.52 48.7 C 400.08 46.28 400.99 43.95 402.95 42.47 L 403.58 41.99 L 403.58 19.02 C 403.58 17.27 405 15.85 406.75 15.85 C 408.5 15.85 409.92 17.27 409.92 19.02 L 409.92 41.99 L 410.55 42.47 C 412.16 43.69 413.09 45.52 413.09 47.51 C 413.09 49.42 412.24 51.21 410.75 52.43 Z M 413.09 40.46 L 413.09 19.02 C 413.09 15.52 410.25 12.68 406.75 12.68 C 403.25 12.68 400.41 15.52 400.41 19.02 L 400.41 40.46 C 397.95 42.67 396.8 45.97 397.41 49.27 C 398.09 53.01 401.04 56.04 404.73 56.81 C 405.39 56.94 406.06 57.01 406.74 57.01 C 408.93 57.02 411.05 56.27 412.75 54.88 C 414.97 53.08 416.26 50.37 416.26 47.51 C 416.26 44.79 415.12 42.26 413.09 40.46 Z M 430.52 56.84 C 430.52 57.83 429.72 58.64 428.73 58.64 L 384.78 58.64 C 383.79 58.64 382.98 57.83 382.98 56.84 L 382.98 12.89 C 382.98 11.9 383.79 11.09 384.78 11.09 L 428.73 11.09 C 429.72 11.09 430.52 11.9 430.52 12.89 Z M 441.62 20.6 L 441.62 17.43 L 433.69 17.43 L 433.69 12.89 C 433.69 10.15 431.47 7.93 428.73 7.92 L 424.18 7.92 L 424.18 0 L 421.01 0 L 421.01 7.92 L 416.26 7.92 L 416.26 0 L 413.09 0 L 413.09 7.92 L 408.34 7.92 L 408.34 0 L 405.17 0 L 405.17 7.92 L 400.41 7.92 L 400.41 0 L 397.24 0 L 397.24 7.92 L 392.49 7.92 L 392.49 0 L 389.32 0 L 389.32 7.92 L 384.78 7.92 C 382.04 7.93 379.82 10.15 379.81 12.89 L 379.81 17.43 L 371.89 17.43 L 371.89 20.6 L 379.81 20.6 L 379.81 25.36 L 371.89 25.36 L 371.89 28.53 L 379.81 28.53 L 379.81 33.28 L 371.89 33.28 L 371.89 36.45 L 379.81 36.45 L 379.81 41.2 L 371.89 41.2 L 371.89 44.37 L 379.81 44.37 L 379.81 49.13 L 371.89 49.13 L 371.89 52.3 L 379.81 52.3 L 379.81 56.84 C 379.81 59.58 382.04 61.8 384.78 61.81 L 389.32 61.81 L 389.32 69.73 L 392.49 69.73 L 392.49 61.81 L 397.24 61.81 L 397.24 69.73 L 400.41 69.73 L 400.41 61.81 L 405.17 61.81 L 405.17 69.73 L 408.34 69.73 L 408.34 61.81 L 413.09 61.81 L 413.09 69.73 L 416.26 69.73 L 416.26 61.81 L 421.01 61.81 L 421.01 69.73 L 424.18 69.73 L 424.18 61.81 L 428.73 61.81 C 431.47 61.8 433.69 59.58 433.69 56.84 L 433.69 52.3 L 441.62 52.3 L 441.62 49.13 L 433.69 49.13 L 433.69 44.37 L 441.62 44.37 L 441.62 41.2 L 433.69 41.2 L 433.69 36.45 L 441.62 36.45 L 441.62 33.28 L 433.69 33.28 L 433.69 28.53 L 441.62 28.53 L 441.62 25.36 L 433.69 25.36 L 433.69 20.6 Z"
+                                    fill="#7aa116" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(122, 161, 22), rgb(97, 130, 11));" />
+                            </g>
+                        </g>
+                        <g data-cell-id="QpVrh31kPz-CHikbTkFE-38">
+                            <g>
+                                <path
+                                    d="M 426.98 90.17 L 426.98 54.88 L 460.19 54.88 L 460.19 77.28 C 457.68 77.57 455.08 79.69 454.37 83.39 L 452.45 83.39 L 452.45 90.17 Z"
+                                    fill="#4495d1" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(68, 149, 209), rgb(61, 131, 183));" />
+                                <path
+                                    d="M 443.6 63.93 C 444.39 63.93 445.34 63.24 445.34 62.05 C 445.34 61.09 444.59 60.18 443.6 60.18 C 442.62 60.18 441.83 61.03 441.83 62.05 C 441.83 63.15 442.65 63.93 443.6 63.93 Z M 443.57 87.12 L 440.93 85.18 L 440.93 72.29 C 438.11 71.1 436.54 68.02 436.6 65.34 C 436.6 61.63 439.52 58.04 443.57 58.04 C 447.21 58.04 450.55 61.11 450.55 65.42 C 450.55 68.31 448.95 71.08 446.24 72.31 L 446.24 73.98 L 445.07 75.22 L 446.24 76.45 L 446.24 77.53 L 445.09 78.77 L 446.24 79.99 L 446.24 81.09 L 445.07 82.29 L 446.24 83.55 L 446.24 85.2 Z"
+                                    fill="#ffffff" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));" />
+                                <path
+                                    d="M 456.89 84.57 L 465.06 84.57 C 464.73 82.59 463.39 80 460.86 80 C 458.89 80 457.19 82.22 456.89 84.57 Z M 453.56 96.05 L 453.56 84.57 L 455.33 84.57 C 455.57 81.43 457.48 78.47 460.94 78.41 C 464.58 78.41 466.56 81.93 466.68 84.57 L 468.3 84.57 L 468.3 96.05 Z"
+                                    fill="#ef8f21" stroke="none" pointer-events="all"
+                                    style="fill: light-dark(rgb(239, 143, 33), rgb(175, 93, 0));" />
+                            </g>
+                        </g>
+                    </g>
+                    <g data-cell-id="QpVrh31kPz-CHikbTkFE-40">
+                        <g>
+                            <path d="M 371.89 34.89 L 328.33 34.89 L 328.33 214.56 L 291.01 214.59"
+                                fill="none" stroke="#000000" stroke-miterlimit="10"
+                                pointer-events="stroke"
+                                style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                            <path
+                                d="M 285.76 214.59 L 292.76 211.09 L 291.01 214.59 L 292.77 218.09 Z"
+                                fill="#000000" stroke="#000000" stroke-miterlimit="10"
+                                pointer-events="all"
+                                style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));" />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" />
+        <a transform="translate(0,-5)"
+            xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot
+                display</text>
+        </a>
+    </switch>
+</svg>
