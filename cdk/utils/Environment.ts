@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { existsSync } from "node:fs";
-import path from "node:path";
+import * as path from "node:path";
 
 // Load environment variables from .env file if it exists
 const envFilePath = path.resolve(__dirname, "../../.env");
