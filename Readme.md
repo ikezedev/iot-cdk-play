@@ -8,6 +8,5 @@ A demonstration of a possible IoT devices setup, with Rust binary for the sensor
 
 ## Todos
 
-- API Gateway
 - React APP
 - CI/CI with GitHub action
