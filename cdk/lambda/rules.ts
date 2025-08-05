@@ -2,18 +2,18 @@ import { Humidity, Temperature } from "../protos/types";
 import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommandInput } from "@aws-sdk/lib-dynamodb";
 
-export const humidityHandler = (input: { data: string }) => {
+export const humidityHandler = async (input: { data: string }) => {
   console.log("Humidity Event received:", input);
 
   const data = parse(input.data, Humidity.fromBinary.bind(Humidity));
-  baseHandler(data, "HUMIDITY_TABLE_NAME");
+  await baseHandler(data, "HUMIDITY_TABLE_NAME");
 };
 
-export const temperatureHandler = (input: { data: string }) => {
+export const temperatureHandler = async (input: { data: string }) => {
   console.log("Temperature Event received:", input);
 
   const data = parse(input.data, Temperature.fromBinary.bind(Temperature));
-  baseHandler(data, "TEMPERATURE_TABLE_NAME");
+  await baseHandler(data, "TEMPERATURE_TABLE_NAME");
 };
 
 const baseHandler = async (
@@ -27,7 +27,7 @@ const baseHandler = async (
   const client = new DynamoDBClient({});
   const docClient = DynamoDBDocumentClient.from(client);
 
-  const tableName = process.env["tableNameEnv"];
+  const tableName = process.env[tableNameEnv];
   if (!tableName) {
     console.error(`${tableNameEnv} name not configured`);
     return;
@@ -37,9 +37,15 @@ const baseHandler = async (
     const params: PutCommandInput = {
       TableName: tableName,
       Item: {
-        device_id: deviceId,
-        humidity: value,
-        timestamp: new Date(Number(timestamp)).toISOString(),
+        device_id: {
+          S: deviceId,
+        },
+        value: {
+          N: value.toString(),
+        },
+        timestamp: {
+          N: timestamp.toString(),
+        },
       },
     };
     const command = new PutItemCommand(params);

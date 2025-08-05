@@ -5,7 +5,7 @@ import * as iot from "aws-cdk-lib/aws-iot";
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as lambdaNodejs from "aws-cdk-lib/aws-lambda-nodejs";
-// import * as apigw from "aws-cdk-lib/aws-apigateway";
+import * as apigw from "aws-cdk-lib/aws-apigateway";
 import * as path from "node:path";
 import { Environment } from "../utils/Environment";
 
@@ -38,17 +38,6 @@ export class CdkStack extends Stack {
     );
     humidityTable.grantReadWriteData(humidityHandler);
 
-    // const writeDynamoDBPolicy = new iam.PolicyStatement({
-    //   actions: ["dynamodb:PutItem", "dynamodb:UpdateItem"],
-    //   resources: [
-    //     temperatureTable.tableArn,
-    //     humidityTable.tableArn,
-    //   ],
-    // });
-
-    // temperatureHandler.addToRolePolicy(writeDynamoDBPolicy);
-    // humidityHandler.addToRolePolicy(writeDynamoDBPolicy);
-
     new WeatherSensor(
       this,
       "WeatherSensor",
@@ -57,46 +46,54 @@ export class CdkStack extends Stack {
       humidityHandler
     );
 
-    // const gatewayFn = new lambdaNodejs.NodejsFunction(
-    //   this,
-    //   "WeatherGatewayFunction",
-    //   {
-    //     entry: path.join(__dirname, "../lambda/api.ts"),
-    //     handler: "handler",
-    //     runtime: lambda.Runtime.NODEJS_22_X,
-    //     environment: {
-    //       TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
-    //       HUMIDITY_TABLE_NAME: humidityTable.tableName,
-    //     },
-    //     functionName: "WeatherGatewayFunction",
-    //   }
-    // );
+    const gatewayFn = new lambdaNodejs.NodejsFunction(
+      this,
+      "WeatherGatewayFunction",
+      {
+        entry: path.join(__dirname, "../lambda/api.ts"),
+        handler: "handler",
+        runtime: lambda.Runtime.NODEJS_22_X,
+        environment: {
+          TEMPERATURE_TABLE_NAME: temperatureTable.tableName,
+          HUMIDITY_TABLE_NAME: humidityTable.tableName,
+        },
+        functionName: "WeatherGatewayFunction",
+      }
+    );
 
-    // temperatureTable.grantReadData(gatewayFn);
-    // humidityTable.grantReadData(gatewayFn);
+    temperatureTable.grantReadData(gatewayFn);
+    humidityTable.grantReadData(gatewayFn);
 
-    // gatewayFn.addToRolePolicy(
-    //   new iam.PolicyStatement({
-    //     actions: ["dynamodb:Query"],
-    //     resources: [temperatureTable.tableArn, humidityTable.tableArn],
-    //   })
-    // );
+    const api = new apigw.RestApi(this, "WeatherAPI", {
+      restApiName: "WeatherAPI",
+      description: "An API exposing temperature and humidity data.",
+    });
 
-    // const api = new apigw.RestApi(this, "WeatherAPI", {
-    //   restApiName: "WeatherAPI",
-    //   description: "An API exposing temperature and humidity data.",
-    // });
-
-    // const resource = api.root.addResource("weather/*", {
-    //   defaultIntegration: new apigw.LambdaIntegration(gatewayFn),
-    //   defaultMethodOptions: {
-    //     apiKeyRequired: false,
-    //   },
-    //   defaultCorsPreflightOptions: {
-    //     allowOrigins: apigw.Cors.ALL_ORIGINS,
-    //     allowMethods: ["GET", "OPTIONS"],
-    //   },
-    // });
+    const weather = api.root.addResource("weather", {
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigw.Cors.ALL_ORIGINS,
+        allowMethods: apigw.Cors.ALL_METHODS,
+      },
+    });
+    weather
+      .addResource("{resource+}")
+      .addMethod("GET", new apigw.LambdaIntegration(gatewayFn), {
+        operationName: "GetWeatherData",
+        methodResponses: [
+          {
+            statusCode: "200",
+            responseModels: {
+              "application/json": apigw.Model.EMPTY_MODEL,
+            },
+          },
+          {
+            statusCode: "404",
+            responseModels: {
+              "application/json": apigw.Model.EMPTY_MODEL,
+            },
+          },
+        ],
+      });
   }
 }
 
